@@ -1,5 +1,11 @@
+import styled from 'styled-components';
+
 const CategoriesPage = () => {
-  return <div>Categoires</div>;
+  return <Negr>Categoires</Negr>;
 };
+
+const Negr = styled.div`
+  color: ${(props) => props.theme};
+`;
 
 export default CategoriesPage;

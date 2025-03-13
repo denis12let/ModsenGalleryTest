@@ -1,5 +1,5 @@
 import { Suspense, useCallback } from 'react';
-import { AppRoutesProps, routes } from '../../router/routes';
+import { AppRoutesProps, routes } from '@router/routes';
 import { Route, Routes } from 'react-router-dom';
 
 export const AppRouter = () => {
