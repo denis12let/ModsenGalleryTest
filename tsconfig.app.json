@@ -24,7 +24,6 @@
 
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
       "@assets/*": ["./src/assets/*"],
       "@store/*": ["./src/store/*"],
@@ -33,6 +32,7 @@
       "@styles/*": ["./src/styles/*"],
       "@pages/*": ["./src/pages/*"],
       "@router/*": ["./src/router/*"],
+      "@ui/*": ["./src/ui/*"],
       "@actions/*": ["./src/store/actions/*"],
       "@reducers/*": ["./src/store/reducers/*"]
     },

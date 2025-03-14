@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const Global = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
 *,
 *::before,
 *::after {
@@ -54,5 +54,44 @@ body {
 button {
   background-color: white;
   outline: none;
+}
+
+@font-face {
+  font-family: 'Lexend Deca';
+  src: url('/fonts/Lexend_Deca/LexendDeca-VariableFont_wght.ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lexend Deca';
+  src: url('/fonts/Lexend_Deca/LexendDeca-VariableFont_wght.ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Signika';
+  src: url('/fonts/Signika/Signika-VariableFont_GRAD,wght.ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 `;
