@@ -7,11 +7,13 @@ declare module 'styled-components' {
       orange: string;
       white: string;
       black: string;
+      milk: string;
     };
     fonts: {
       primary: string;
       secondary: string;
       tertiary: string;
+      not_found: string;
     };
     fontSizes: {
       small: string;

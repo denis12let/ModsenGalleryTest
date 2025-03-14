@@ -1,11 +1,7 @@
-import styled from 'styled-components';
+import { Layout } from '@components/Layout';
 
 const CategoriesPage = () => {
-  return <Negr>Categoires</Negr>;
+  return <Layout>Categories</Layout>;
 };
-
-const Negr = styled.div`
-  color: ${(props) => props.theme};
-`;
 
 export default CategoriesPage;
