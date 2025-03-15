@@ -34,8 +34,7 @@
       "@router/*": ["./src/router/*"],
       "@ui/*": ["./src/ui/*"],
       "@hooks/*": ["./src/hooks/*"],
-      "@actions/*": ["./src/store/actions/*"],
-      "@reducers/*": ["./src/store/reducers/*"]
+      "@api/*": ["./src/api/*"]
     },
 
     "typeRoots": ["./node_modules/@types", "./src/types"]

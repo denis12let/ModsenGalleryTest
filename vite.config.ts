@@ -16,8 +16,7 @@ export default defineConfig({
       '@router': '/src/router',
       '@ui': '/src/ui',
       '@hooks': '/src/hooks',
-      '@actions': '/src/store/actions',
-      '@reducers': '/src/store/reducers',
+      '@api': '/src/api',
     },
   },
 });
