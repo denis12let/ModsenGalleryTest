@@ -3,7 +3,7 @@ import { NavLink } from '@ui/NavLink';
 import styled from 'styled-components';
 
 interface SocialItemStyledProps {
-  backgroundColor?: string;
+  backgroundcolor?: string;
 }
 
 export const SocialsStyled = styled.ul`
@@ -15,7 +15,7 @@ export const SocialItemStyled = styled.li<SocialItemStyledProps>`
   width: 28px;
   height: 28px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  background: ${({ backgroundColor }) => backgroundColor || theme.colors.white};
+  background: ${({ backgroundcolor }) => backgroundcolor || theme.colors.white};
   border-radius: 50%;
 `;
 

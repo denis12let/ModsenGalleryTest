@@ -39,12 +39,6 @@ declare module 'styled-components' {
       container: {
         width: string;
       };
-      header: {
-        height: string;
-      };
-      footer: {
-        heigth: string;
-      };
     };
     media: {
       small: string;

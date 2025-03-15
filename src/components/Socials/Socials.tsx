@@ -20,7 +20,7 @@ export const Socials: FC<SocialsProps> = ({ variant = 'default' }) => {
         </SocialLinkStyled>
       </SocialItemStyled>
       <SocialItemStyled
-        backgroundColor={
+        backgroundcolor={
           variant === 'highlighted' ? theme.colors.yellow : theme.colors.white
         }
       >

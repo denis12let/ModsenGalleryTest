@@ -14,7 +14,7 @@ const textStyles: TextStyledProps = {
   fontFamily: 'Roboto',
   fontSize: '24px',
   fontWeight: '400',
-  lineHeight: '28px',
+  lineheight: '28px',
 };
 
 export const Navbar: FC<NavbarProps> = ({ isRow = true }) => {

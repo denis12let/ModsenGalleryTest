@@ -1,7 +1,5 @@
-import { Layout } from '@components/Layout';
-
 const ImagesPage = () => {
-  return <Layout>Images</Layout>;
+  return <>Images</>;
 };
 
 export default ImagesPage;

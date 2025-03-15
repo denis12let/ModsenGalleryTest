@@ -1,7 +1,5 @@
-import { Layout } from '@components/Layout';
-
 const FavoritesPage = () => {
-  return <Layout>Favorites</Layout>;
+  return <>Favorites</>;
 };
 
 export default FavoritesPage;

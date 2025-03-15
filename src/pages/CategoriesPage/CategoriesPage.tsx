@@ -1,7 +1,5 @@
-import { Layout } from '@components/Layout';
-
 const CategoriesPage = () => {
-  return <Layout>Categories</Layout>;
+  return <>Categories</>;
 };
 
 export default CategoriesPage;

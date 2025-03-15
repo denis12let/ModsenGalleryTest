@@ -1,3 +1,14 @@
+import { FooterInner, FooterWrapper } from './Footer.style';
+import { FooterInfo } from './FooterInfo/FooterInfo';
+import { FooterLinks } from './FooterLinks';
+
 export const Footer = () => {
-  return <div></div>;
+  return (
+    <FooterWrapper>
+      <FooterInner>
+        <FooterInfo />
+        <FooterLinks />
+      </FooterInner>
+    </FooterWrapper>
+  );
 };

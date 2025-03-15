@@ -4,11 +4,12 @@ export interface TextStyledProps {
   color?: string;
   fontSize?: string;
   fontWeight?: string;
-  textAlign?: string;
-  lineHeight?: string;
+  textalign?: string;
+  lineheight?: string;
   margin?: string;
   padding?: string;
   fontFamily?: string;
+  maxwidth?: string;
 }
 
 export const TextStyled = styled.p<TextStyledProps>`
@@ -16,10 +17,11 @@ export const TextStyled = styled.p<TextStyledProps>`
   font-size: ${({ fontSize, theme }) => fontSize || theme.fontSizes.normal};
   font-weight: ${({ fontWeight, theme }) =>
     fontWeight || theme.fontWeights[400]};
-  text-align: ${({ textAlign }) => textAlign || 'left'};
-  line-height: ${({ lineHeight }) => lineHeight || '19px'};
+  text-align: ${({ textalign }) => textalign || 'left'};
+  line-height: ${({ lineheight }) => lineheight || '19px'};
   margin: ${({ margin }) => margin || '0'};
   padding: ${({ padding }) => padding || '0'};
   font-family: ${({ fontFamily }) => fontFamily || 'inherit'};
-  text-align: center;
+  text-align: ${({ textalign }) => textalign || 'center'};
+  max-width: ${({ maxwidth }) => maxwidth || '100%'};
 `;

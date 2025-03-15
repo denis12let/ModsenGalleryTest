@@ -1,7 +1,5 @@
-import { Layout } from '@components/Layout';
-
 const NotFoundPage = () => {
-  return <Layout>Not Found</Layout>;
+  return <>Not Found</>;
 };
 
 export default NotFoundPage;

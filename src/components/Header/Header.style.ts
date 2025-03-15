@@ -8,7 +8,7 @@ export const HeaderWrapper = styled.div`
 
 export const HeaderInner = styled.div`
   position: relative;
-  top: -6px;
+  top: -4px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,4 +16,7 @@ export const HeaderInner = styled.div`
   height: 80px;
   margin: 0 auto;
   padding: 0 20px;
+  @media ${({ theme }) => theme.media.small} {
+    padding: 0;
+  }
 `;
