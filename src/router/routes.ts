@@ -1,8 +1,8 @@
-import { APP_ROUTES, APP_ROUTES_PATH } from '../constants/app';
-import { CategoriesPage } from '../pages/CategoriesPage';
-import { FavoritesPage } from '../pages/FavoritesPage';
-import { ImagesPage } from '../pages/ImagesPage';
-import { NotFoundPage } from '../pages/NotFoundPage';
+import { APP_ROUTES, APP_ROUTES_PATH } from '@constants/app';
+import { CategoriesPage } from '@pages/CategoriesPage';
+import { FavoritesPage } from '@pages/FavoritesPage';
+import { ImagesPage } from '@pages/ImagesPage';
+import { NotFoundPage } from '@pages/NotFoundPage';
 
 export interface AppRoutesProps {
   path: string;
