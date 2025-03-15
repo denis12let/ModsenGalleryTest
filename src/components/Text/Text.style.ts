@@ -21,4 +21,5 @@ export const TextStyled = styled.p<TextStyledProps>`
   margin: ${({ margin }) => margin || '0'};
   padding: ${({ padding }) => padding || '0'};
   font-family: ${({ fontFamily }) => fontFamily || 'inherit'};
+  text-align: center;
 `;

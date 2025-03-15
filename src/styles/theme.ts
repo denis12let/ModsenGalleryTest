@@ -37,13 +37,7 @@ export const theme = {
       heigth: '600px',
     },
     container: {
-      width: '900px',
-    },
-    header: {
-      height: '110px',
-    },
-    footer: {
-      heigth: '375px',
+      width: '910px',
     },
   },
   media: {

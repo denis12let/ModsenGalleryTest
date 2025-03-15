@@ -10,12 +10,7 @@ export const Logo: FC<LogoProps> = ({
   color = theme.colors.white,
   decorColor = theme.colors.orange,
 }) => (
-  <svg
-    width="287.000000"
-    height="54.695999"
-    viewBox="0 0 287 54.696"
-    fill="none"
-  >
+  <svg viewBox="0 0 287 54.696" fill="none">
     <path
       id="Vector"
       d="M21.98 17.82L20.74 19.71L16.31 26.45L5.99 10.71L0 10.71L0 40.96L6.46 40.96L6.46 22.3L14.42 34.47L18.16 34.47L24.09 25.47L25.32 23.57L21.98 17.82Z"

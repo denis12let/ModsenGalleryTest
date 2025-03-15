@@ -3,21 +3,34 @@ import { APP_ROUTES_PATH } from '@constants/app';
 import { Icons } from '@assets/icons';
 import { Text } from '@components/Text';
 import { NavbarItem } from './NavbarItem/NavbarItem';
+import { FC } from 'react';
+import { TextStyledProps } from '@components/Text/Text.style';
 
-export const Navbar = () => {
+interface NavbarProps {
+  isRow?: boolean;
+}
+
+const textStyles: TextStyledProps = {
+  fontFamily: 'Roboto',
+  fontSize: '24px',
+  fontWeight: '400',
+  lineHeight: '28px',
+};
+
+export const Navbar: FC<NavbarProps> = ({ isRow = true }) => {
   return (
-    <Menu>
+    <Menu isRow={isRow}>
       <NavbarItem to={APP_ROUTES_PATH.CATEGORIES}>
-        <Icons.Category />
-        <Text>Category</Text>
+        {isRow && <Icons.Category />}
+        <Text {...textStyles}>Category</Text>
       </NavbarItem>
       <NavbarItem to={APP_ROUTES_PATH.IMAGES}>
-        <Icons.Images />
-        <Text>Images</Text>
+        {isRow && <Icons.Images />}
+        <Text {...textStyles}>Images</Text>
       </NavbarItem>
       <NavbarItem to={APP_ROUTES_PATH.FAVORITES}>
-        <Icons.Favorites />
-        <Text>Favorites</Text>
+        {isRow && <Icons.Favorites />}
+        <Text {...textStyles}>Favorites</Text>
       </NavbarItem>
     </Menu>
   );
