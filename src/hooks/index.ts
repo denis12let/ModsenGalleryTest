@@ -1,1 +1,0 @@
-export { useScreenWidth } from './useScreenWidth';

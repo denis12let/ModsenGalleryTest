@@ -1,1 +1,1 @@
-export { ResponsiveLogo } from './ResponsiveLogo';
+export * from './ResponsiveLogo';

@@ -1,5 +1,5 @@
 import { FooterInner, FooterWrapper } from './Footer.style';
-import { FooterInfo } from './FooterInfo/FooterInfo';
+import { FooterInfo } from './FooterInfo';
 import { FooterLinks } from './FooterLinks';
 
 export const Footer = () => {

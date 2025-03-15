@@ -2,7 +2,7 @@ import { Menu } from './Navbar.style';
 import { APP_ROUTES_PATH } from '@constants/app';
 import { Icons } from '@assets/icons';
 import { Text } from '@components/Text';
-import { NavbarItem } from './NavbarItem/NavbarItem';
+import { NavbarItem } from './NavbarItem';
 import { FC } from 'react';
 import { TextStyledProps } from '@components/Text/Text.style';
 

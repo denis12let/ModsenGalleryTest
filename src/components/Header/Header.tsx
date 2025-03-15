@@ -1,6 +1,6 @@
 import { HeaderInner, HeaderWrapper } from './Header.style';
 import { NavLink } from '@ui/NavLink/NavLink';
-import { Navbar } from './Navbar/Navbar';
+import { Navbar } from './Navbar';
 import { APP_ROUTES_PATH } from '@constants/app';
 import { useScreenWidth } from '@hooks/useScreenWidth';
 import { Button } from '@ui/Button';
