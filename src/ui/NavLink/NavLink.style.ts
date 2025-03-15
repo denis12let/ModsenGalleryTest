@@ -7,6 +7,7 @@ export interface RouterNavLinkProps {
 }
 
 export const RouterNavLink = styled(NavLink)<RouterNavLinkProps>`
+  widht: 100%;
   text-decoration: none;
   color: ${({ color, theme }) => color || theme.colors.milk};
   &.active {
