@@ -1,5 +1,16 @@
+import { HeroSection } from '@components/HeroSection';
+import { CategoriesGallery } from './components/CategoriesGallery';
+import { Container } from '@components/Container';
+
 const CategoriesPage = () => {
-  return <>Categories</>;
+  return (
+    <>
+      <HeroSection></HeroSection>
+      <Container>
+        <CategoriesGallery />
+      </Container>
+    </>
+  );
 };
 
 export default CategoriesPage;

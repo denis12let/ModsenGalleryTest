@@ -24,4 +24,7 @@ export const TextStyled = styled.p<TextStyledProps>`
   font-family: ${({ fontFamily }) => fontFamily || 'inherit'};
   text-align: ${({ textalign }) => textalign || 'center'};
   max-width: ${({ maxwidth }) => maxwidth || '100%'};
+  & span {
+    color: ${({ theme }) => theme.colors.orange};
+  }
 `;
