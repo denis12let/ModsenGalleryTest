@@ -5,16 +5,20 @@ import { GlobalStyle } from '@styles/global';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@styles/theme';
 import { Layout } from '@components/Layout';
+import { Provider } from 'react-redux';
+import { store } from '@store/store';
 
 function App() {
   return (
     <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Layout>
-          <AppRouter />
-        </Layout>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Layout>
+            <AppRouter />
+          </Layout>
+        </ThemeProvider>
+      </Provider>
     </BrowserRouter>
   );
 }
