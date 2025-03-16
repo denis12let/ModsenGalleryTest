@@ -7,8 +7,8 @@ interface CategoryItemProps {
 }
 
 export const CategoryItemWrapper = styled.div<CategoryItemProps>`
-  width: 285px;
-  height: 244px;
+  width: 100%;
+  height: 100%;
 
   margin: 0 auto;
 
@@ -19,7 +19,6 @@ export const CategoryItemWrapper = styled.div<CategoryItemProps>`
   padding: 10px;
 
   @media (max-width: 1000px) {
-    width: 100%;
     height: 180px;
   }
 `;

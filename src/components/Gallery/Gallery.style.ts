@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export interface ImageItemWrapper {
+  width: string;
+  height: string;
+}
+
 export const GalleryGrid = styled.div`
   display: grid;
   gap: 26px;
@@ -15,5 +20,15 @@ export const GalleryGrid = styled.div`
   @media (max-width: 650px) {
     grid-template-columns: repeat(1, 1fr);
     padding: 20px 0;
+  }
+`;
+
+export const GalleryItemWrapper = styled.div<ImageItemWrapper>`
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    height: 170px;
   }
 `;

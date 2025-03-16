@@ -14,19 +14,16 @@ import { useAppDispatch } from '@hooks/useAppDispatch';
 import { setFavorite, unsetFavorite } from '@store/reducers/imageSlice';
 import { useScreenWidth } from '@hooks/useScreenWidth';
 
-import { useState } from 'react';
-import Modal from '@ui/Modal/Modal';
-
 interface ImageCardProps {
   text: string;
   src: string;
   id: string;
+  isModal: boolean;
 }
 
-export const ImageCard: FC<ImageCardProps> = ({ src, text, id }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
+export const ImageCard: FC<ImageCardProps> = ({ src, text, id, isModal }) => {
   const width = useScreenWidth();
+
   const dispatch = useAppDispatch();
   const { favorites } = useAppSelector((state) => state.images);
 
@@ -40,49 +37,45 @@ export const ImageCard: FC<ImageCardProps> = ({ src, text, id }) => {
     }
   };
 
-  let textWidth = 30;
-  if ((width <= 900 && width > 650) || width < 450) {
-    textWidth = 17;
-  }
+  let textWidth = isModal
+    ? width > 900
+      ? 50
+      : 20
+    : (width <= 900 && width > 650) || width < 450
+      ? 17
+      : 30;
+
+  const iconProperties = {
+    width: isModal
+      ? width > 1000
+        ? '20px'
+        : '12px'
+      : width > 1000
+        ? '10px'
+        : '8px',
+    height: isModal
+      ? width > 1000
+        ? '30px'
+        : '16px'
+      : width > 1000
+        ? '14px'
+        : '12px',
+    fill: isFavorite ? theme.colors.orange : 'none',
+    color: theme.colors.orange,
+  };
 
   return (
     <>
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(!isModalOpen)}>
-        <ImageItemWrapper
-          src={src}
-          alt={text}
-          onClick={() => setIsModalOpen(!isModalOpen)}
-        >
-          <ImageItemInner>
-            <ImageItemText>{truncateText(text, textWidth)}</ImageItemText>
-            <Button onClick={handleFavoriteToggle}>
-              <FavoriteButton>
-                <Icons.FavoritesAlt
-                  color={theme.colors.orange}
-                  fill={isFavorite ? theme.colors.orange : 'none'}
-                  width="20px"
-                  height="30px"
-                />
-              </FavoriteButton>
-            </Button>
-          </ImageItemInner>
-        </ImageItemWrapper>
-      </Modal>
-      <ImageItemWrapper
-        src={src}
-        alt={text}
-        onClick={() => setIsModalOpen(!isModalOpen)}
-      >
+      <ImageItemWrapper src={src} alt={text}>
         <ImageItemInner>
-          <ImageItemText>{truncateText(text, textWidth)}</ImageItemText>
+          <ImageItemText
+            maxWidth={isModal ? (width > 900 ? '400px' : '200px') : '200px'}
+          >
+            {truncateText(text, textWidth)}
+          </ImageItemText>
           <Button onClick={handleFavoriteToggle}>
             <FavoriteButton>
-              <Icons.FavoritesAlt
-                color={theme.colors.orange}
-                fill={isFavorite ? theme.colors.orange : 'none'}
-                width={width > 1000 ? '10px' : '8px'}
-                height={width > 1000 ? '14px' : '12px'}
-              />
+              <Icons.FavoritesAlt {...iconProperties} />
             </FavoriteButton>
           </Button>
         </ImageItemInner>

@@ -44,6 +44,10 @@ export const ModalContainer = styled.div`
   position: fixed;
   animation: ${fadeIn} 0.3s ease-out;
   z-index: 2000;
+  @media (max-width: 900px) {
+    max-width: 345px;
+    height: 410px;
+  }
 `;
 
 export const CloseButton = styled(ButtonStyled)`
@@ -54,6 +58,8 @@ export const CloseButton = styled(ButtonStyled)`
   width: 25px;
   height: 25px;
   cursor: pointer;
+  z-index: 1;
+  background-color: transparent;
 `;
 
 export const Content = styled.div`

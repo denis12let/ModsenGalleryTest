@@ -6,9 +6,13 @@ interface ImageItemProps {
   alt: string;
 }
 
+interface ImageItemTextProps {
+  maxWidth: string;
+}
+
 export const ImageItemWrapper = styled.div<ImageItemProps>`
-  width: 285px;
-  height: 232px;
+  width: 100%;
+  height: 100%;
   position: relative;
 
   margin: 0 auto;
@@ -24,10 +28,8 @@ export const ImageItemWrapper = styled.div<ImageItemProps>`
   &:hover {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
-
   @media (max-width: 1000px) {
-    width: 100%;
-    height: 170px;
+    background-position: center;
   }
 `;
 
@@ -49,8 +51,8 @@ export const ImageItemInner = styled.div`
   }
 `;
 
-export const ImageItemText = styled(TextStyled)`
-  max-width: 200px;
+export const ImageItemText = styled(TextStyled)<ImageItemTextProps>`
+  max-width: ${({ maxWidth }) => maxWidth};
   color: rgb(57, 57, 57);
   font-family: Lexend Deca;
   font-size: 17.54px;
