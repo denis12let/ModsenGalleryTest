@@ -15,7 +15,7 @@ export const ImageItemWrapper = styled.div<ImageItemProps>`
 
   background: url(${({ src }) => src});
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center calc(100% - 60px);
   background-size: cover;
 
   cursor: pointer;
@@ -34,7 +34,7 @@ export const ImageItemWrapper = styled.div<ImageItemProps>`
 export const ImageItemInner = styled.div`
   width: 100%;
   height: 58px;
-  padding: 3px 24px;
+  padding: 3px 20px;
   position: absolute;
   left: 0;
   right: 0;

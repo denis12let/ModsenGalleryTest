@@ -8,6 +8,7 @@ import {
 import { Button } from '@ui/Button';
 import { Icons } from '@assets/icons';
 import { theme } from '@styles/theme';
+import { truncateText } from '@utils/imageUtils';
 
 interface ImageCardProps {
   text: string;
@@ -19,7 +20,7 @@ export const ImageCard: FC<ImageCardProps> = ({ src, text, isFavorite }) => {
   return (
     <ImageItemWrapper src={src} alt={text}>
       <ImageItemInner>
-        <ImageItemText>{text}</ImageItemText>
+        <ImageItemText>{truncateText(text)}</ImageItemText>
         <Button>
           <FavoriteButton>
             <Icons.Favorites

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { fetchImageByTag, fetchOneImage } from '@store/actions';
+import { fetchAllImages, fetchImageByTag, fetchOneImage } from '@store/actions';
 import { IFavoriteImage, IImage } from 'src/types';
 
 interface ImagesState {
@@ -24,6 +24,22 @@ const imagesSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      .addCase(fetchAllImages.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(
+        fetchAllImages.fulfilled,
+        (state, action: PayloadAction<IImage[]>) => {
+          state.isLoading = false;
+          state.images = action.payload;
+        }
+      )
+      .addCase(fetchAllImages.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload as string;
+      })
+
       .addCase(fetchImageByTag.pending, (state) => {
         state.isLoading = true;
         state.error = null;

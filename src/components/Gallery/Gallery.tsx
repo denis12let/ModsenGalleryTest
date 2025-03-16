@@ -6,11 +6,12 @@ import { ImageCard } from './ImageCard';
 
 interface GalleryProps {
   array: IImage[] | ICategory[];
-  variant?: 'category' | 'image';
+  variant: 'category' | 'image';
 }
 
 export const Gallery: FC<GalleryProps> = ({ variant = 'image', array }) => {
   let galleryArray;
+  console.log(...array);
 
   switch (variant) {
     case 'category':
@@ -19,11 +20,14 @@ export const Gallery: FC<GalleryProps> = ({ variant = 'image', array }) => {
       ));
       break;
     case 'image':
-      galleryArray = (array as ICategory[]).map((item) => (
+      galleryArray = (array as IImage[]).map((item) => (
         <ImageCard
-          key={item.CATEGORY}
-          src={item.IMG}
-          text={item.CATEGORY}
+          key={item.id}
+          src={item.urls.small}
+          text={
+            item.alt_description[0].toUpperCase() +
+            item.alt_description.slice(1)
+          }
           isFavorite={false}
         />
       ));
