@@ -11,7 +11,6 @@ interface GalleryProps {
 
 export const Gallery: FC<GalleryProps> = ({ variant = 'image', array }) => {
   let galleryArray;
-  console.log(...array);
 
   switch (variant) {
     case 'category':
@@ -28,7 +27,7 @@ export const Gallery: FC<GalleryProps> = ({ variant = 'image', array }) => {
             item.alt_description[0].toUpperCase() +
             item.alt_description.slice(1)
           }
-          isFavorite={false}
+          id={item.id}
         />
       ));
       break;

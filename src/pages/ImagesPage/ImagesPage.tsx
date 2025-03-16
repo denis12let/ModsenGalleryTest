@@ -7,13 +7,11 @@ import { useEffect } from 'react';
 import { useAppDispatch } from '@hooks/useAppDispatch';
 import { useAppSelector } from '@hooks/useAppSelector';
 import { fetchAllImages, fetchImageByTag } from '@store/actions';
+import { HeroText } from '@components/HeroSection/HeroSection.style';
 
 const ImagesPage = () => {
   const dispatch = useAppDispatch();
-  const { images, favorites, error, isLoading } = useAppSelector(
-    (state) => state.images
-  );
-
+  const { images, error, isLoading } = useAppSelector((state) => state.images);
   const location = useLocation();
   // @ts-expect-error
   const path = location.pathname.split('/').at(-1).toLowerCase();
@@ -37,7 +35,13 @@ const ImagesPage = () => {
 
   return (
     <>
-      <HeroSection></HeroSection>
+      <HeroSection>
+        <HeroText fontSize="48px">
+          Let's find some <span>Images</span>
+          <br />
+          here!
+        </HeroText>
+      </HeroSection>
       <Container>
         {isLoading || !images.length ? (
           <>Лоадер</>

@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchAllImages, fetchImageByTag, fetchOneImage } from '@store/actions';
-import { IFavoriteImage, IImage } from 'src/types';
+import { IImage } from 'src/types';
 
 interface ImagesState {
   images: IImage[];
   image: IImage | null;
   isLoading: boolean;
   error: string | null;
-  favorites: IFavoriteImage[];
+  favorites: IImage[];
 }
 
 const initialState: ImagesState = {
@@ -21,7 +21,20 @@ const initialState: ImagesState = {
 const imagesSlice = createSlice({
   name: 'images',
   initialState,
-  reducers: {},
+  reducers: {
+    setFavorite(state, action: PayloadAction<string>) {
+      state.favorites = [
+        ...state.favorites,
+        ...state.images.filter((item) => item.id === action.payload),
+      ];
+    },
+
+    unsetFavorite(state, action: PayloadAction<string>) {
+      state.favorites = state.favorites.filter(
+        (item) => item.id !== action.payload
+      );
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAllImages.pending, (state) => {
@@ -75,3 +88,4 @@ const imagesSlice = createSlice({
 });
 
 export const { reducer: imageReducer, selectors: imageSelectors } = imagesSlice;
+export const { setFavorite, unsetFavorite } = imagesSlice.actions;

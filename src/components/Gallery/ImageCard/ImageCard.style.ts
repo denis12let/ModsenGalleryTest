@@ -15,7 +15,7 @@ export const ImageItemWrapper = styled.div<ImageItemProps>`
 
   background: url(${({ src }) => src});
   background-repeat: no-repeat;
-  background-position: center calc(100% - 60px);
+  background-position: center calc(100% - 58px);
   background-size: cover;
 
   cursor: pointer;
@@ -58,6 +58,9 @@ export const ImageItemText = styled(TextStyled)`
   line-height: 26.32px;
   letter-spacing: -3%;
   text-align: left;
+  @media (max-width: 1000px) {
+    text-wrap: nowrap;
+  }
 `;
 
 export const FavoriteButton = styled.div`
@@ -76,5 +79,10 @@ export const FavoriteButton = styled.div`
 
   &:active {
     background-color: inherit;
+  }
+
+  @media (max-width: 1000px) {
+    width: 29px;
+    height: 29px;
   }
 `;

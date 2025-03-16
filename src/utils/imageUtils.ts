@@ -1,6 +1,6 @@
-export const truncateText = (text: string) => {
-  if (text.length > 37) {
-    return text.slice(0, 37) + '...';
+export const truncateText = (text: string, len: number) => {
+  if (text.length > len) {
+    return text.slice(0, len) + '...';
   }
 
   return text;

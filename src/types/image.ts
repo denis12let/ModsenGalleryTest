@@ -25,10 +25,6 @@ export interface IImage {
   likes: number;
 }
 
-export interface IFavoriteImage {
-  iamgeId: string;
-}
-
 export interface ICategory {
   CATEGORY: string;
   IMG: string;
