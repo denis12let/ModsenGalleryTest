@@ -27,3 +27,8 @@ export interface IImage {
 export interface IFavoriteImage {
   iamgeId: string;
 }
+
+export interface ICategory {
+  CATEGORY: string;
+  IMG: string;
+}

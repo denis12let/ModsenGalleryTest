@@ -1,13 +1,14 @@
 import { HeroSection } from '@components/HeroSection';
-import { CategoriesGallery } from './components/CategoriesGallery';
 import { Container } from '@components/Container';
+import { Gallery } from '@components/Gallery';
+import { IMAGES_CATEGORIES } from '@constants/ImagesCategories';
 
 const CategoriesPage = () => {
   return (
     <>
       <HeroSection></HeroSection>
       <Container>
-        <CategoriesGallery />
+        <Gallery array={IMAGES_CATEGORIES} variant="category" />
       </Container>
     </>
   );

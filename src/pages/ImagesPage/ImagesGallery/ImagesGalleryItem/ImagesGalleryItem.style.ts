@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { TextStyled } from '@components/Text/Text.style';
 
-interface CategoriesGalleryItemWrapperProps {
+interface ImagesGalleryItemWrapperProps {
   src: string;
   alt: string;
 }
 
-export const CategoriesGalleryItemWrapper = styled.div<CategoriesGalleryItemWrapperProps>`
+export const ImagesGalleryItemWrapper = styled.div<ImagesGalleryItemWrapperProps>`
   width: 285px;
   height: 244px;
 
@@ -24,25 +24,21 @@ export const CategoriesGalleryItemWrapper = styled.div<CategoriesGalleryItemWrap
   }
 `;
 
-export const CategoriesGalleryItemInner = styled.div`
+export const ImagesGalleryItemInner = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
 `;
 
-export const CategoriesGalleryItemText = styled(TextStyled)`
+export const ImagesGalleryItemText = styled(TextStyled)`
   position: absolute;
   left: 0;
   bottom: 0;
-  color: #fff;
-  font-family: Roboto;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 23px;
-  text-transform: capitalize;
-  text-shadow:
-    -1px -1px 0 black,
-    1px -1px 0 black,
-    -1px 1px 0 black,
-    1px 1px 0 black;
+  color: rgb(57, 57, 57);
+  font-family: Lexend Deca;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26.32px;
+  letter-spacing: -3%;
+  text-align: left;
 `;

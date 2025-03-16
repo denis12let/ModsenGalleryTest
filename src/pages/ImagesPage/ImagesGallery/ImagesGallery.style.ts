@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CategoriesGalleryGrid = styled.div`
+export const ImagesGalleryGrid = styled.div`
   display: grid;
   gap: 26px;
   padding: 40px 0 95px;
