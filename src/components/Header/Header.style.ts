@@ -4,6 +4,7 @@ export const HeaderWrapper = styled.div`
   width: 100%;
   padding: 21px 12px 8px 17px;
   background: ${({ theme }) => theme.gradients.background};
+  z-index: 1001;
 `;
 
 export const HeaderInner = styled.div`

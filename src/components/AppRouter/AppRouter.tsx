@@ -1,6 +1,7 @@
 import { Suspense, useCallback } from 'react';
 import { AppRoutesProps, routes } from '@router/routes';
 import { Route, Routes } from 'react-router-dom';
+import { NotFoundPage } from '@pages/NotFoundPage';
 
 export const AppRouter = () => {
   const renderWithWrapper = useCallback((router: AppRoutesProps) => {
@@ -17,5 +18,10 @@ export const AppRouter = () => {
     );
   }, []);
 
-  return <Routes>{Object.values(routes).map(renderWithWrapper)}</Routes>;
+  return (
+    <Routes>
+      {Object.values(routes).map(renderWithWrapper)}
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
+  );
 };

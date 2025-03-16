@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle<{ isModalOpen: boolean }>`
+  body {
+    overflow: ${({ isModalOpen }) => (isModalOpen ? 'hidden' : 'auto')};
+  }
+    
 *,
 *::before,
 *::after {

@@ -10,6 +10,7 @@ export const FooterWrapper = styled.div`
   @media (max-width: 500px) {
     padding: 33px 23px;
   }
+  z-index: 1001;
 `;
 
 export const FooterInner = styled.div`

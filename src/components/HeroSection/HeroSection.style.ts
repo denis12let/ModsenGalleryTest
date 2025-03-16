@@ -4,7 +4,7 @@ import { TextStyled } from '@components/Text/Text.style';
 export const HeroSectionWrapper = styled.div`
   width: 100%;
   height: 420px;
-  background: url('src/assets/images/heroSectionBg.png');
+  background: url('/src/assets/images/heroSectionBg.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -33,7 +33,7 @@ export const HeroSectionInner = styled.div`
 export const HeroText = styled(TextStyled)`
   color: #fff;
   font-family: Roboto;
-  font-size: 96px;
+  font-size: ${({ fontSize }) => fontSize || '48px'};
   font-weight: 700;
   line-height: 113px;
   text-align: center;
@@ -45,7 +45,7 @@ export const HeroText = styled(TextStyled)`
     1px 1px 0 black;
   text-wrap: nowrap;
   @media (max-width: 900px) {
-    font-size: 48px;
+    font-size: ${({ fontSize }) => parseInt(fontSize) / 2 + 'px' || '48px'};
     line-height: 56px;
   }
   @media (max-width: 360px) {

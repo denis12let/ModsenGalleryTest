@@ -22,8 +22,10 @@ export interface IImage {
   alt_description: string;
   urls: ImageUrls;
   tags: Tag[];
+  likes: number;
 }
 
-export interface IFavoriteImage {
-  iamgeId: string;
+export interface ICategory {
+  CATEGORY: string;
+  IMG: string;
 }
