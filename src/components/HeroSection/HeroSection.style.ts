@@ -4,7 +4,7 @@ import { TextStyled } from '@components/Text/Text.style';
 export const HeroSectionWrapper = styled.div`
   width: 100%;
   height: 420px;
-  background: url('src/assets/images/heroSectionBg.png');
+  background: url('/src/assets/images/heroSectionBg.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
