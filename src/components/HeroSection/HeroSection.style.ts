@@ -26,7 +26,7 @@ export const HeroSectionInner = styled.div`
   justify-content: center;
   gap: 87px;
   @media (max-width: 600px) {
-    gap: 25px;
+    gap: 10px;
   }
 `;
 
@@ -35,7 +35,7 @@ export const HeroText = styled(TextStyled)`
   font-family: Roboto;
   font-size: ${({ fontSize }) => fontSize || '48px'};
   font-weight: 700;
-  line-height: 113px;
+  line-height: ${({ lineheight }) => lineheight || '48px'};
   text-align: center;
   text-transform: capitalize;
   text-shadow:

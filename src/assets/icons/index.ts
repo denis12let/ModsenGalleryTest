@@ -10,6 +10,7 @@ import { Images } from './Images';
 import { Burger } from './Burger';
 import { Close } from './Close';
 import { FavoritesAlt } from './FavoriteAlt';
+import { Search } from './Search';
 
 export const Icons = {
   Logo,
@@ -19,6 +20,7 @@ export const Icons = {
   FavoritesAlt,
   Burger,
   Close,
+  Search,
 
   Twitter,
   Github,
