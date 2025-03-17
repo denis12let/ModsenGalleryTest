@@ -1,27 +1,16 @@
-import art from '@assets/images/categories/art.jpeg';
-import cars from '@assets/images/categories/cars.jpeg';
-import architecture from '@assets/images/categories/architecture.jpeg';
-import food from '@assets/images/categories/food.jpeg';
-import religion from '@assets/images/categories/religion.jpeg';
-import clothes from '@assets/images/categories/clothes.jpeg';
-import technologies from '@assets/images/categories/technologies.jpeg';
-import music from '@assets/images/categories/music.jpeg';
-import business from '@assets/images/categories/business.jpeg';
-import sport from '@assets/images/categories/sport.jpeg';
-import social from '@assets/images/categories/social.jpeg';
-import sky from '@assets/images/categories/sky.jpeg';
+import { CategoriesImages } from '@assets/images/categories';
 
 export const IMAGES_CATEGORIES = [
-  { CATEGORY: 'Art', IMG: art },
-  { CATEGORY: 'Cars', IMG: cars },
-  { CATEGORY: 'Architecture', IMG: architecture },
-  { CATEGORY: 'Food', IMG: food },
-  { CATEGORY: 'Religion', IMG: religion },
-  { CATEGORY: 'Clothes', IMG: clothes },
-  { CATEGORY: 'Technologies', IMG: technologies },
-  { CATEGORY: 'Music', IMG: music },
-  { CATEGORY: 'Business', IMG: business },
-  { CATEGORY: 'Sport', IMG: sport },
-  { CATEGORY: 'Social', IMG: social },
-  { CATEGORY: 'Sky', IMG: sky },
+  { CATEGORY: 'Art', IMG: CategoriesImages.art },
+  { CATEGORY: 'Cars', IMG: CategoriesImages.cars },
+  { CATEGORY: 'Architecture', IMG: CategoriesImages.architecture },
+  { CATEGORY: 'Food', IMG: CategoriesImages.food },
+  { CATEGORY: 'Religion', IMG: CategoriesImages.religion },
+  { CATEGORY: 'Clothes', IMG: CategoriesImages.clothes },
+  { CATEGORY: 'Technologies', IMG: CategoriesImages.technologies },
+  { CATEGORY: 'Music', IMG: CategoriesImages.music },
+  { CATEGORY: 'Business', IMG: CategoriesImages.business },
+  { CATEGORY: 'Sport', IMG: CategoriesImages.sport },
+  { CATEGORY: 'Social', IMG: CategoriesImages.social },
+  { CATEGORY: 'Sky', IMG: CategoriesImages.sky },
 ];
