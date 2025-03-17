@@ -31,7 +31,7 @@ export class ImageService {
   ) {
     const { data } = await apiService.get<IImagesResponse>('/search/photos', {
       params: {
-        ...(tag ? { query: tag } : {}),
+        query: tag,
         page,
         per_page: perPage,
         order_by: orderBy,

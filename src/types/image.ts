@@ -35,3 +35,13 @@ export interface IImagesResponse {
   total: number;
   total_pages: number;
 }
+
+export interface IPaginationParams {
+  page?: number;
+  perPage?: number;
+  orderBy?: string;
+}
+
+export interface IPaginationQuerryParams extends IPaginationParams {
+  query: string;
+}
