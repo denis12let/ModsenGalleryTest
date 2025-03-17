@@ -19,7 +19,7 @@ interface SelectProps {
   setValue: (value: string) => void;
 }
 
-export const Select: FC<SelectProps> = ({ options, value, setValue }) => {
+export const Select: FC<SelectProps> = ({ options, setValue }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(options[0].label);
 

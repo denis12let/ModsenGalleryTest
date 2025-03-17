@@ -1,54 +1,54 @@
-# React + TypeScript + Vite
+# Тестовое задание Modsen Gallery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Содержание
 
-Currently, two official plugins are available:
+- [Техническое задание](#Техническое-задание)
+- [API](#API)
+- [Пример графического представления](#Пример-графического-представления)
+- [Описание экранов](#Описание-экранов)
+- [Используемые технологии](#Используемые-технологии)
+- [Полезные ссылки](#Полезные-ссылки)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Техническое задание
 
-## Expanding the ESLint configuration
+Необходимо реализовать React приложение "Галерея изображений" по предоставленному дизайну из Figma. Пользователь может выбрать категорию изображений, искать изображения с помощью поисковой строки, сортировать изображения, добавлять изображения в избранное.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## API
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+[Unsplash](https://unsplash.com/documentation)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Так же проект предполагает
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- [+]Использовать **Vite** для сборки проекта;
+- [+]Использование **TypeScript** для типизирования и уменьшения количества потенциальных багов;
+- [+]Организацию файловой структуры react приложения. Ссылка на структуру: [Cтруктура проекта](https://github.com/mkrivel/structure);
+- [+]Придерживаться требований по написанию и организации кода react приложения. Ссылка на требования: [Требования к тестовому заданию](https://github.com/annaprystavka/requirements);
+- [+]Использовать [соглашение о коммитах](https://www.conventionalcommits.org/ru/v1.0.0/);
+- [+]Деплой приложения на платформу Vercel или иные другие (Netlify, GitHub Pages, ...);
+- [+]Настройка конфигурации eslint, prettier, husky (должны быть настроены прехуки), commitlint;
+- [+-]Использование корректного [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) в проекте;
+- [+]Использование сторонних библиотек для стилей - **ЗАПРЕЩЕНЫ**, кроме рекомендуемых в пункте “Используемые технологии”;
+- [+]Использование **алиасов** для импортирования файлов;
+- [-]Обработка ошибок через **Error Boundaries**;
+- [+]Оптимизацию приложения;
+- [+]При загрузке изображений необходимо реализовать **Loader**;
+- [+]Реализация **burger menu** для мобильной версии;
+- [+-]Обязательную анимацию при наведении, нажатии на кнопки, появлении элементов на странице при рендере и скролле;
+- [-]Использование приватного репозитория на GitHub. - **для деплоя репозиторий стал публичным**
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Пример графического представления
+
+Ссылка на макет: ["Modsen Gallery"](<https://www.figma.com/design/zk7fLjKHubNQQafUKpiooc/Modsen-gallery-(React)?node-id=0-1&t=lCEZn6vpBOUHnVOy-1>).
+
+## Используемые технологии
+
+- **React** – библиотека для создания пользовательских интерфейсов;
+- **TypeScript** – для строгой типизации;
+- **Vite** - сборщик модулей, который позволяет скомпилировать JavaScript-модули в единый JS-файл;
+- **Styled Components** – для стилизации компонентов;
+- **React router dom** - библиотека для навигации между разными частями веб-приложения;
+- **Yarn** - менеджер пакетов;
+- **Eslint** – для линтинга кода;
+- **Prettier** – для автоформатирования кода;
+- **Husky** – для настройки precommit хуков.
+- **Redux** - стейт менеджер

@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { TextStyled } from '@components/Text/Text.style';
+import heroBg from '@assets/images/heroSectionBg.png';
 
 export const HeroSectionWrapper = styled.div`
   width: 100%;
   height: 420px;
-  background: url('/src/assets/images/heroSectionBg.png');
+  background: url(${heroBg});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -45,7 +46,7 @@ export const HeroText = styled(TextStyled)`
     1px 1px 0 black;
   text-wrap: nowrap;
   @media (max-width: 900px) {
-    font-size: ${({ fontSize }) => parseInt(fontSize) / 2 + 'px' || '48px'};
+    font-size: ${({ fontSize = '48px' }) => parseInt(fontSize) / 2 + 'px'};
     line-height: 56px;
   }
   @media (max-width: 360px) {
