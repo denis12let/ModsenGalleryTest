@@ -1,9 +1,6 @@
-import { theme } from '@styles/theme';
 import { FC, SVGProps } from 'react';
 
-export const Close: FC<SVGProps<SVGSVGElement>> = ({
-  color = theme.colors.black,
-}) => (
+export const Close: FC<SVGProps<SVGSVGElement>> = ({}) => (
   <svg
     width="25.000000"
     height="25.359253"

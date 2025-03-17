@@ -30,7 +30,7 @@ const ImagesPage = () => {
   ];
 
   const dispatch = useAppDispatch();
-  const { images, error, isLoading, pagination } = useAppSelector(
+  const { images, isLoading, pagination } = useAppSelector(
     (state) => state.images
   );
   const [currentPage, setCurrentPage] = useState(1);
@@ -135,7 +135,7 @@ const ImagesPage = () => {
             {value || path !== 'images' ? (
               <Pagination
                 currentPage={currentPage}
-                totalPages={pagination.total_pages}
+                totalPages={pagination.total_pages || 1}
                 onPageChange={setCurrentPage}
               />
             ) : (

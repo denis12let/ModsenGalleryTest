@@ -45,7 +45,7 @@ export const HeroText = styled(TextStyled)`
     1px 1px 0 black;
   text-wrap: nowrap;
   @media (max-width: 900px) {
-    font-size: ${({ fontSize }) => parseInt(fontSize) / 2 + 'px' || '48px'};
+    font-size: ${({ fontSize = '48px' }) => parseInt(fontSize) / 2 + 'px'};
     line-height: 56px;
   }
   @media (max-width: 360px) {

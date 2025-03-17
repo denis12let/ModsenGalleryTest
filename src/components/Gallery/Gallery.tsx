@@ -66,16 +66,18 @@ export const Gallery: FC<GalleryProps> = ({ variant = 'image', array }) => {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(!isModalOpen)}
         >
-          <ImageCard
-            key={currentImage.id}
-            src={currentImage.urls.full}
-            text={
-              currentImage.alt_description[0].toUpperCase() +
-              currentImage.alt_description.slice(1)
-            }
-            id={currentImage.id}
-            isModal={true}
-          />
+          {currentImage && (
+            <ImageCard
+              key={currentImage.id}
+              src={currentImage.urls.full}
+              text={
+                currentImage.alt_description[0].toUpperCase() +
+                currentImage.alt_description.slice(1)
+              }
+              id={currentImage.id}
+              isModal={true}
+            />
+          )}
         </Modal>
       )}
       {galleryArray}
