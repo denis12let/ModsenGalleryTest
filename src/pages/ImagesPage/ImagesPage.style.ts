@@ -56,3 +56,23 @@ export const ImagesNotFoundText = styled(TextStyled)`
     max-width: 400px;
   }
 `;
+
+export const SelectWrapper = styled.div`
+  width: 100%;
+  padding-top: 25px;
+  margin-bottom: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 11px;
+`;
+
+export const SelectText = styled.p`
+  color: rgb(57, 57, 57);
+  font-family: Lexend Deca;
+  font-size: 17.54px;
+  font-weight: 500;
+  line-height: 26.32px;
+  letter-spacing: -3%;
+  text-align: left;
+`;

@@ -1,12 +1,18 @@
+import { IImagesResponse } from './../types/image';
 import { IImage } from 'src/types';
 import { apiService } from './service';
 
 export class ImageService {
-  static async getAll(page: number = 1, perPage: number = 10) {
+  static async getAll(
+    page: number = 1,
+    perPage: number = 10,
+    orderBy: string = 'popular'
+  ) {
     const { data } = await apiService.get<IImage[]>('/photos', {
       params: {
         page,
         per_page: perPage,
+        order_by: orderBy,
       },
     });
     return data;
@@ -20,18 +26,18 @@ export class ImageService {
   static async getImageByTag(
     tag: string,
     page: number = 1,
-    perPage: number = 10
+    perPage: number = 10,
+    orderBy: string = 'popular'
   ) {
-    const { data } = await apiService.get<{ results: IImage[] }>(
-      '/search/photos',
-      {
-        params: {
-          query: tag,
-          page,
-          per_page: perPage,
-        },
-      }
-    );
-    return data.results;
+    const { data } = await apiService.get<IImagesResponse>('/search/photos', {
+      params: {
+        ...(tag ? { query: tag } : {}),
+        page,
+        per_page: perPage,
+        order_by: orderBy,
+      },
+    });
+
+    return data;
   }
 }

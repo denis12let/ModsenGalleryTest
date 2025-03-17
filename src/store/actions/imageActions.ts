@@ -1,16 +1,19 @@
 import { ImageService } from '@api/ImageService';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { IImage } from 'src/types';
+import { IImage, IImagesResponse } from 'src/types';
 
 export const fetchAllImages = createAsyncThunk<
   IImage[],
-  { page?: number; perPage?: number },
+  { page?: number; perPage?: number; orderBy?: string },
   { rejectValue: string }
 >(
   'images/fetchAll',
-  async ({ page = 1, perPage = 12 }, { rejectWithValue }) => {
+  async (
+    { page = 1, perPage = 12, orderBy = 'latest' },
+    { rejectWithValue }
+  ) => {
     try {
-      const data = await ImageService.getAll(page, perPage);
+      const data = await ImageService.getAll(page, perPage, orderBy);
       return data;
     } catch (error) {
       return rejectWithValue('Failed to fetch images');
@@ -32,14 +35,22 @@ export const fetchOneImage = createAsyncThunk<
 });
 
 export const fetchImageByTag = createAsyncThunk<
-  IImage[],
-  { query: string; page?: number; perPage?: number },
+  IImagesResponse,
+  { query: string; page?: number; perPage?: number; orderBy?: string },
   { rejectValue: string }
 >(
   'images/search',
-  async ({ query, page = 1, perPage = 12 }, { rejectWithValue }) => {
+  async (
+    { query, page = 1, perPage = 12, orderBy = 'latest' },
+    { rejectWithValue }
+  ) => {
     try {
-      const data = await ImageService.getImageByTag(query, page, perPage);
+      const data = await ImageService.getImageByTag(
+        query,
+        page,
+        perPage,
+        orderBy
+      );
       return data;
     } catch (error) {
       return rejectWithValue('Error fetch search images');
