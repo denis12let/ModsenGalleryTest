@@ -29,7 +29,7 @@ export const ImageItemWrapper = styled.div<ImageItemProps>`
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
   @media (max-width: 1000px) {
-    background-position: center;
+    background-position: center calc(100% - 35px);
   }
 `;
 

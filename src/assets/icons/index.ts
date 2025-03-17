@@ -11,6 +11,7 @@ import { Burger } from './Burger';
 import { Close } from './Close';
 import { FavoritesAlt } from './FavoriteAlt';
 import { Search } from './Search';
+import { Arrow } from './Arrow';
 
 export const Icons = {
   Logo,
@@ -21,6 +22,7 @@ export const Icons = {
   Burger,
   Close,
   Search,
+  Arrow,
 
   Twitter,
   Github,

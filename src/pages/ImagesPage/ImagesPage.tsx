@@ -12,18 +12,29 @@ import {
   ImagesNotFoundText,
   InputIcon,
   InputWrapper,
+  SelectText,
+  SelectWrapper,
 } from './ImagesPage.style';
 import { Input } from '@ui/Input';
 import { Icons } from '@assets/icons';
 import useDebounce from '@hooks/UseDebounce';
 import { Loader } from '@ui/Loader';
+import { clearImages } from '@store/reducers/imageSlice';
+import Select from '@ui/Select/Select';
 
 const ImagesPage = () => {
   const dispatch = useAppDispatch();
   const { images, error, isLoading } = useAppSelector((state) => state.images);
   const [value, setValue] = useState('');
 
-  const debouncedSearch = useDebounce(value, 700);
+  const options = ['Relevant', 'Latest'];
+  const [currentSelect, setCurrentSelect] = useState(options[0]);
+
+  const handleSelect = (value: string) => {
+    setCurrentSelect(value);
+  };
+
+  const debouncedSearch = useDebounce(value, 400);
 
   useEffect(() => {
     if (debouncedSearch) {
@@ -44,11 +55,21 @@ const ImagesPage = () => {
     } else {
       dispatch(fetchImageByTag({ query: path }));
     }
-    //сделать images = null
+
+    return () => {
+      dispatch(clearImages());
+    };
   }, []);
 
   if (isImages) {
-    imagesArray = images;
+    imagesArray = [...images].sort((a, b) => {
+      if (currentSelect === 'Latest') {
+        return (
+          new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+        );
+      }
+      return a.likes - b.likes;
+    });
   } else {
     imagesArray = IMAGES_CATEGORIES;
   }
@@ -76,10 +97,16 @@ const ImagesPage = () => {
             The search didn't yield any results, please try <span>again</span>.
           </ImagesNotFoundText>
         ) : (
-          <Gallery
-            array={imagesArray}
-            variant={isImages ? 'image' : 'category'}
-          />
+          <>
+            <SelectWrapper>
+              <SelectText>Sort by</SelectText>
+              <Select options={options} onSelect={handleSelect} />
+            </SelectWrapper>
+            <Gallery
+              array={imagesArray}
+              variant={isImages ? 'image' : 'category'}
+            />
+          </>
         )}
       </Container>
     </>

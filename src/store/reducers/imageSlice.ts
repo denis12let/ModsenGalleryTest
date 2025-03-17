@@ -34,6 +34,9 @@ const imagesSlice = createSlice({
         (item) => item.id !== action.payload
       );
     },
+    clearImages(state) {
+      state.images = [];
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -88,4 +91,4 @@ const imagesSlice = createSlice({
 });
 
 export const { reducer: imageReducer, selectors: imageSelectors } = imagesSlice;
-export const { setFavorite, unsetFavorite } = imagesSlice.actions;
+export const { setFavorite, unsetFavorite, clearImages } = imagesSlice.actions;
