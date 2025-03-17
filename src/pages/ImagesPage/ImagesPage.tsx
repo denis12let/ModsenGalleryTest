@@ -112,6 +112,14 @@ const ImagesPage = () => {
         </InputWrapper>
       </HeroSection>
       <Container>
+        <SelectWrapper>
+          <SelectText>Sort by</SelectText>
+          <Select
+            options={options}
+            value={sortValue}
+            setValue={setSortedValue}
+          />
+        </SelectWrapper>
         {isLoading ? (
           <Loader />
         ) : !images.length ? (
@@ -119,30 +127,16 @@ const ImagesPage = () => {
             The search didn't yield any results, please try <span>again</span>.
           </ImagesNotFoundText>
         ) : (
-          <>
-            <SelectWrapper>
-              <SelectText>Sort by</SelectText>
-              <Select
-                options={options}
-                value={sortValue}
-                setValue={setSortedValue}
-              />
-            </SelectWrapper>
-            <Gallery
-              array={imagesArray}
-              variant={isImages ? 'image' : 'category'}
-            />
-            {value || path !== 'images' ? (
-              <Pagination
-                currentPage={currentPage}
-                totalPages={pagination.total_pages || 1}
-                onPageChange={setCurrentPage}
-              />
-            ) : (
-              <></>
-            )}
-          </>
+          <Gallery
+            array={imagesArray}
+            variant={isImages ? 'image' : 'category'}
+          />
         )}
+        <Pagination
+          currentPage={currentPage || 1}
+          totalPages={pagination.total_pages || 1}
+          onPageChange={setCurrentPage}
+        />
       </Container>
     </>
   );
