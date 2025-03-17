@@ -2,13 +2,14 @@ import { Suspense, useCallback } from 'react';
 import { AppRoutesProps, routes } from '@router/routes';
 import { Route, Routes } from 'react-router-dom';
 import { NotFoundPage } from '@pages/NotFoundPage';
+import { Loader } from '@ui/Loader';
 
 export const AppRouter = () => {
   const renderWithWrapper = useCallback((router: AppRoutesProps) => {
     const Element = router.element;
 
     const element = (
-      <Suspense fallback={<div>Какой-то лоадинг</div>}>
+      <Suspense fallback={<Loader />}>
         <Element />
       </Suspense>
     );

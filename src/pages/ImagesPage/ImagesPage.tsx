@@ -16,6 +16,7 @@ import {
 import { Input } from '@ui/Input';
 import { Icons } from '@assets/icons';
 import useDebounce from '@hooks/UseDebounce';
+import { Loader } from '@ui/Loader';
 
 const ImagesPage = () => {
   const dispatch = useAppDispatch();
@@ -42,7 +43,8 @@ const ImagesPage = () => {
       dispatch(fetchAllImages({}));
     } else {
       dispatch(fetchImageByTag({ query: path }));
-    } //сделать images = null
+    }
+    //сделать images = null
   }, []);
 
   if (isImages) {
@@ -68,7 +70,7 @@ const ImagesPage = () => {
       </HeroSection>
       <Container>
         {isLoading ? (
-          <>Лоадер</>
+          <Loader />
         ) : !images.length ? (
           <ImagesNotFoundText>
             The search didn't yield any results, please try <span>again</span>.
