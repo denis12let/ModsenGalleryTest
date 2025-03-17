@@ -1,8 +1,6 @@
 import { Container } from '@components/Container';
 import { Gallery } from '@components/Gallery';
-import { useAppDispatch } from '@hooks/useAppDispatch';
 import { useAppSelector } from '@hooks/useAppSelector';
-import { useEffect } from 'react';
 import {
   FavoritesNotFoundText,
   FavoritesSubtitle,

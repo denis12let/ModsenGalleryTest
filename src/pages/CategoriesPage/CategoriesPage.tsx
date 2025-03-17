@@ -8,7 +8,7 @@ const CategoriesPage = () => {
   return (
     <>
       <HeroSection>
-        <HeroText fontSize="96px">
+        <HeroText fontSize="96px" lineheight="113px">
           Let's find some
           <br />
           <span>Images</span> here!
