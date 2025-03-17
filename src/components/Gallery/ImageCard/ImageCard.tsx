@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, MouseEvent } from 'react';
 import {
   ImageItemWrapper,
   ImageItemInner,
@@ -29,7 +29,8 @@ export const ImageCard: FC<ImageCardProps> = ({ src, text, id, isModal }) => {
 
   const isFavorite = favorites.some((item) => item.id === id);
 
-  const handleFavoriteToggle = () => {
+  const handleFavoriteToggle = (e: MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
     if (isFavorite) {
       dispatch(unsetFavorite(id));
     } else {

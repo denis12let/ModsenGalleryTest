@@ -1,9 +1,10 @@
-import { FC, ReactNode } from 'react';
+import { FC, MouseEvent, ReactNode } from 'react';
+
 import { ButtonStyled } from './Button.style';
 
 interface ButtonProps {
   children: ReactNode;
-  onClick?: () => void;
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const Button: FC<ButtonProps> = ({ children, ...props }) => {

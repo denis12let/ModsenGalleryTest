@@ -19,7 +19,7 @@ export const ImageItemWrapper = styled.div<ImageItemProps>`
 
   background: url(${({ src }) => src});
   background-repeat: no-repeat;
-  background-position: center calc(100% - 58px);
+  background-position: center center;
   background-size: cover;
 
   cursor: pointer;
@@ -27,9 +27,6 @@ export const ImageItemWrapper = styled.div<ImageItemProps>`
 
   &:hover {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  }
-  @media (max-width: 1000px) {
-    background-position: center calc(100% - 35px);
   }
 `;
 

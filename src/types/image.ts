@@ -29,3 +29,9 @@ export interface ICategory {
   CATEGORY: string;
   IMG: string;
 }
+
+export interface IImagesResponse {
+  results: IImage[];
+  total: number;
+  total_pages: number;
+}

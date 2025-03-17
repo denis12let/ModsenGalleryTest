@@ -2,24 +2,30 @@ import { FC, useState } from 'react';
 import {
   SelectContainer,
   SelectedValue,
-  Arrow,
   OptionsList,
   OptionItem,
 } from './Select.style';
 import { Icons } from '@assets/icons';
 
-interface SelectProps {
-  options: string[];
-  onSelect: (value: string) => void;
+export interface Option {
+  id: number;
+  value: string;
+  label: string;
 }
 
-const Select: FC<SelectProps> = ({ options, onSelect }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(options[0]);
+interface SelectProps {
+  options: Option[];
+  value: string;
+  setValue: (value: string) => void;
+}
 
-  const handleSelect = (option: string) => {
-    setSelectedOption(option);
-    onSelect(option);
+export const Select: FC<SelectProps> = ({ options, value, setValue }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(options[0].label);
+
+  const handleSelect = (option: Option) => {
+    setValue(option.value);
+    setSelectedOption(option.label);
     setIsOpen(false);
   };
 
@@ -32,8 +38,8 @@ const Select: FC<SelectProps> = ({ options, onSelect }) => {
       {isOpen && (
         <OptionsList>
           {options.map((option) => (
-            <OptionItem key={option} onClick={() => handleSelect(option)}>
-              {option}
+            <OptionItem key={option.id} onClick={() => handleSelect(option)}>
+              {option.label}
             </OptionItem>
           ))}
         </OptionsList>
@@ -41,5 +47,3 @@ const Select: FC<SelectProps> = ({ options, onSelect }) => {
     </SelectContainer>
   );
 };
-
-export default Select;

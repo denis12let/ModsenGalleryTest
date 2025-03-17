@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchAllImages, fetchImageByTag, fetchOneImage } from '@store/actions';
-import { IImage } from 'src/types';
+import { IImage, IImagesResponse } from 'src/types';
 
 interface ImagesState {
   images: IImage[];
@@ -8,6 +8,10 @@ interface ImagesState {
   isLoading: boolean;
   error: string | null;
   favorites: IImage[];
+  pagination: {
+    total: number | null;
+    total_pages: number | null;
+  };
 }
 
 const initialState: ImagesState = {
@@ -16,6 +20,10 @@ const initialState: ImagesState = {
   isLoading: false,
   error: null,
   favorites: [],
+  pagination: {
+    total: null,
+    total_pages: null,
+  },
 };
 
 const imagesSlice = createSlice({
@@ -33,6 +41,9 @@ const imagesSlice = createSlice({
       state.favorites = state.favorites.filter(
         (item) => item.id !== action.payload
       );
+    },
+    setImages(state, action: PayloadAction<IImage[]>) {
+      state.images = action.payload;
     },
     clearImages(state) {
       state.images = [];
@@ -62,9 +73,13 @@ const imagesSlice = createSlice({
       })
       .addCase(
         fetchImageByTag.fulfilled,
-        (state, action: PayloadAction<IImage[]>) => {
+        (state, action: PayloadAction<IImagesResponse>) => {
           state.isLoading = false;
-          state.images = action.payload;
+          state.images = action.payload.results;
+          state.pagination = {
+            total: action.payload.total,
+            total_pages: action.payload.total_pages,
+          };
         }
       )
       .addCase(fetchImageByTag.rejected, (state, action) => {
@@ -91,4 +106,5 @@ const imagesSlice = createSlice({
 });
 
 export const { reducer: imageReducer, selectors: imageSelectors } = imagesSlice;
-export const { setFavorite, unsetFavorite, clearImages } = imagesSlice.actions;
+export const { setFavorite, unsetFavorite, clearImages, setImages } =
+  imagesSlice.actions;
