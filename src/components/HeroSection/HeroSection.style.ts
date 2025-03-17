@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { TextStyled } from '@components/Text/Text.style';
+import heroBg from '@assets/images/heroSectionBg.png';
 
 export const HeroSectionWrapper = styled.div`
   width: 100%;
   height: 420px;
-  background: url('/src/assets/images/heroSectionBg.png');
+  background: url(${heroBg});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

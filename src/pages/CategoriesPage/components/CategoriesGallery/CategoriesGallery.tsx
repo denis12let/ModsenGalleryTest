@@ -6,7 +6,7 @@ export const CategoriesGallery = () => {
   return (
     <CategoriesGalleryGrid>
       {IMAGES_CATEGORIES.map((item) => (
-        <CategoriesGalleryItem src={item.IMG} text={item.CATEGORY} />
+        <CategoriesGalleryItem img={item.IMG} text={item.CATEGORY} />
       ))}{' '}
     </CategoriesGalleryGrid>
   );

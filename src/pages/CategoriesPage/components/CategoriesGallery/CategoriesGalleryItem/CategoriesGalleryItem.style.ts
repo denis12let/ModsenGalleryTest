@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { TextStyled } from '@components/Text/Text.style';
 
 interface CategoriesGalleryItemWrapperProps {
-  src: string;
+  img: string;
   alt: string;
 }
 
@@ -12,7 +12,7 @@ export const CategoriesGalleryItemWrapper = styled.div<CategoriesGalleryItemWrap
 
   margin: 0 auto;
 
-  background: url(${({ src }) => src});
+  background: url(${({ img }) => img});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

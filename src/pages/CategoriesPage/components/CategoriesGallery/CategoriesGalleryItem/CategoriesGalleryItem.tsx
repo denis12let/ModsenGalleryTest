@@ -9,16 +9,16 @@ import { APP_ROUTES_PATH } from '@constants/app';
 
 interface CategoriesGalleryItemProps {
   text: string;
-  src: string;
+  img: string;
 }
 
 export const CategoriesGalleryItem: FC<CategoriesGalleryItemProps> = ({
   text,
-  src,
+  img,
 }) => {
   return (
     <NavLink to={APP_ROUTES_PATH.IMAGES + '/' + text}>
-      <CategoriesGalleryItemWrapper src={src} alt={text}>
+      <CategoriesGalleryItemWrapper img={img} alt={text}>
         <CategoriesGalleryItemInner>
           <CategoriesGalleryItemText>{text}</CategoriesGalleryItemText>
         </CategoriesGalleryItemInner>
