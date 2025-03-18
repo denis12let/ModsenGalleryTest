@@ -1,15 +1,18 @@
-import { Icons } from '@assets/icons';
+import { FC } from 'react';
+
+import { Icons } from '@assets';
+import { Socials } from '@components';
+
+import { Navbar } from '../Navbar/Navbar';
+import { ResponsiveLogo } from '../ResponsiveLogo';
+
+import { theme } from '@styles';
 import {
   BurgerMenuButton,
   BurgerMenuLogo,
   BurgerMenuSocials,
   BurgerMenuStyled,
 } from './BurgerMenu.style';
-import { theme } from '@styles/theme';
-import { FC } from 'react';
-import { ResponsiveLogo } from '../ResponsiveLogo';
-import { Navbar } from '../Navbar/Navbar';
-import { Socials } from '@components/Socials';
 
 interface BurgerMenuProps {
   handleBurgerMenu: () => void;

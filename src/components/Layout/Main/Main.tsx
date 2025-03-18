@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react';
+
 import { MainWrapper } from './Main.style';
 
 interface MainProps {

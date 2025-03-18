@@ -1,10 +1,12 @@
-import { Menu } from './Navbar.style';
-import { APP_ROUTES_PATH } from '@constants/app';
-import { Icons } from '@assets/icons';
-import { Text } from '@components/Text';
-import { NavbarItem } from './NavbarItem';
 import { FC } from 'react';
-import { TextStyledProps } from '@components/Text/Text.style';
+
+import { Text } from '@ui';
+import { NavItems } from '@constants/layout';
+
+import { NavbarItem } from './NavbarItem';
+
+import { TextStyledProps } from '@ui/Text/Text.style';
+import { Menu } from './Navbar.style';
 
 interface NavbarProps {
   isRow?: boolean;
@@ -20,18 +22,12 @@ const textStyles: TextStyledProps = {
 export const Navbar: FC<NavbarProps> = ({ isRow = true }) => {
   return (
     <Menu isRow={isRow}>
-      <NavbarItem to={APP_ROUTES_PATH.CATEGORIES}>
-        {isRow && <Icons.Category />}
-        <Text {...textStyles}>Category</Text>
-      </NavbarItem>
-      <NavbarItem to={APP_ROUTES_PATH.IMAGES}>
-        {isRow && <Icons.Images />}
-        <Text {...textStyles}>Images</Text>
-      </NavbarItem>
-      <NavbarItem to={APP_ROUTES_PATH.FAVORITES}>
-        {isRow && <Icons.Favorites />}
-        <Text {...textStyles}>Favorites</Text>
-      </NavbarItem>
+      {NavItems.map(({ icon: Icon, ...item }, index) => (
+        <NavbarItem to={item.to} key={index}>
+          {isRow && <Icon />}
+          <Text {...textStyles}>{item.text}</Text>
+        </NavbarItem>
+      ))}
     </Menu>
   );
 };

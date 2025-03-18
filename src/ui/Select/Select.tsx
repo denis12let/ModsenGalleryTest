@@ -1,17 +1,14 @@
 import { FC, useState } from 'react';
+
+import { Icons } from '@assets/icons';
+import { Option } from 'src/types';
+
 import {
   SelectContainer,
   SelectedValue,
   OptionsList,
   OptionItem,
 } from './Select.style';
-import { Icons } from '@assets/icons';
-
-export interface Option {
-  id: number;
-  value: string;
-  label: string;
-}
 
 interface SelectProps {
   options: Option[];
@@ -19,7 +16,7 @@ interface SelectProps {
   setValue: (value: string) => void;
 }
 
-export const Select: FC<SelectProps> = ({ options, value, setValue }) => {
+export const Select: FC<SelectProps> = ({ options, setValue }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(options[0].label);
 

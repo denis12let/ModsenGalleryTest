@@ -1,4 +1,4 @@
-import { NotFound } from './NotFound/NotFound';
+import { NotFound } from './NotFound';
 import { NotFoundText } from './NotFoundPage.style';
 
 const NotFoundPage = () => {

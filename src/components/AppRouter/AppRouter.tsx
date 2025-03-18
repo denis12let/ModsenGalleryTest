@@ -1,8 +1,9 @@
 import { Suspense, useCallback } from 'react';
-import { AppRoutesProps, routes } from '@router/routes';
 import { Route, Routes } from 'react-router-dom';
-import { NotFoundPage } from '@pages/NotFoundPage';
-import { Loader } from '@ui/Loader';
+
+import { AppRoutesProps, routes } from '@router';
+import { NotFoundPage } from '@pages';
+import { Loader } from '@ui';
 
 export const AppRouter = () => {
   const renderWithWrapper = useCallback((router: AppRoutesProps) => {

@@ -1,12 +1,16 @@
+import { LazyExoticComponent, ComponentType } from 'react';
+
 import { APP_ROUTES_PATH } from '@constants/app';
-import { CategoriesPage } from '@pages/CategoriesPage';
-import { FavoritesPage } from '@pages/FavoritesPage';
-import { ImagesPage } from '@pages/ImagesPage';
-import { NotFoundPage } from '@pages/NotFoundPage';
+import {
+  CategoriesPage,
+  FavoritesPage,
+  ImagesPage,
+  NotFoundPage,
+} from '@pages';
 
 export interface AppRoutesProps {
   path: string;
-  element: React.LazyExoticComponent<React.ComponentType<any>>;
+  element: LazyExoticComponent<ComponentType<any>>;
 }
 
 export const routes = {

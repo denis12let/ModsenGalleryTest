@@ -1,20 +1,22 @@
 import styled from 'styled-components';
-import { TextStyled } from '@components/Text/Text.style';
+
+import { TextStyled } from '@ui/Text/Text.style';
+import heroBg from '@assets/images/heroSectionBg.png';
 
 export const HeroSectionWrapper = styled.div`
   width: 100%;
   height: 420px;
-  background: url('/src/assets/images/heroSectionBg.png');
+  background: url(${heroBg});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  @media (max-width: 900px) and (min-width: 600px) {
+  @media ${({ theme }) => theme.media.preLarge} and (min-width: 600px) {
     height: 300px;
   }
-  @media (max-width: 600px) {
+  @media ${({ theme }) => theme.media.preLarge} {
     height: 200px;
   }
 `;
@@ -25,7 +27,7 @@ export const HeroSectionInner = styled.div`
   align-items: center;
   justify-content: center;
   gap: 87px;
-  @media (max-width: 600px) {
+  @media ${({ theme }) => theme.media.preLarge} {
     gap: 10px;
   }
 `;
@@ -44,11 +46,11 @@ export const HeroText = styled(TextStyled)`
     -1px 1px 0 black,
     1px 1px 0 black;
   text-wrap: nowrap;
-  @media (max-width: 900px) {
-    font-size: ${({ fontSize }) => parseInt(fontSize) / 2 + 'px' || '48px'};
+  @media ${({ theme }) => theme.media.preLarge} {
+    font-size: ${({ fontSize = '48px' }) => parseInt(fontSize) / 2 + 'px'};
     line-height: 56px;
   }
-  @media (max-width: 360px) {
+  @media ${({ theme }) => theme.media.small} {
     text-wrap: wrap;
   }
 `;

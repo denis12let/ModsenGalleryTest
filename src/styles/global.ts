@@ -1,6 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle<{ isModalOpen: boolean }>`
+import Lexend_Deca from '/fonts/Lexend_Deca/LexendDeca-VariableFont_wght.ttf';
+import Signika from '/fonts/Signika/Signika-VariableFont_GRAD,wght.ttf';
+import Montserrat from '/fonts/Montserrat/Montserrat-VariableFont_wght.ttf';
+import Roboto from '/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf';
+
+export const GlobalStyle = createGlobalStyle<{ isModalOpen?: boolean }>`
   body {
     overflow: ${({ isModalOpen }) => (isModalOpen ? 'hidden' : 'auto')};
   }
@@ -64,22 +69,15 @@ button {
 
 @font-face {
   font-family: 'Lexend Deca';
-  src: url('/fonts/Lexend_Deca/LexendDeca-VariableFont_wght.ttf');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Lexend Deca';
-  src: url('/fonts/Lexend_Deca/LexendDeca-VariableFont_wght.ttf');
-  font-weight: 700;
+  src: url(${Lexend_Deca});
+  font-weight: 300 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Signika';
-  src: url('/fonts/Signika/Signika-VariableFont_GRAD,wght.ttf');
+  src: url(${Signika});
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -87,7 +85,7 @@ button {
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('/fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+  src: url(${Montserrat});
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -95,7 +93,7 @@ button {
 
 @font-face {
   font-family: 'Roboto';
-  src: url('/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf');
+  src: url(${Roboto});
   font-weight: 400;
   font-style: normal;
   font-display: swap;

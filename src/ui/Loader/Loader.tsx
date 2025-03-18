@@ -1,9 +1,11 @@
+import logo from '@assets/images/loader.svg';
+
 import { LoaderWrapper } from './Loader.style';
 
 export const Loader = () => {
   return (
     <LoaderWrapper>
-      <img src="/src/assets/images/loader.svg" alt="" />
+      <img src={logo} alt="" />
     </LoaderWrapper>
   );
 };

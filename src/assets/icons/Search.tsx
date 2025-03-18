@@ -1,6 +1,6 @@
 import { FC, SVGProps } from 'react';
 
-export const Search: FC<SVGProps<SVGSVGElement>> = ({ color }) => {
+export const Search: FC<SVGProps<SVGSVGElement>> = ({}) => {
   return (
     <svg width="100%" height="100%" viewBox="0 0 17.7532 18.7531" fill="none">
       <desc>Created with Pixso.</desc>

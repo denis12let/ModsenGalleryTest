@@ -1,5 +1,4 @@
-import { IImagesResponse } from './../types/image';
-import { IImage } from 'src/types';
+import { IImage, IImagesResponse } from 'src/types';
 import { apiService } from './service';
 
 export class ImageService {
@@ -31,7 +30,7 @@ export class ImageService {
   ) {
     const { data } = await apiService.get<IImagesResponse>('/search/photos', {
       params: {
-        ...(tag ? { query: tag } : {}),
+        query: tag,
         page,
         per_page: perPage,
         order_by: orderBy,

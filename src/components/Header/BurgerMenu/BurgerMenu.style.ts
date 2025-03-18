@@ -1,5 +1,6 @@
-import { Button } from '@ui/Button';
 import styled from 'styled-components';
+
+import { Button } from '@ui';
 
 export const BurgerMenuStyled = styled.div`
   position: relative;

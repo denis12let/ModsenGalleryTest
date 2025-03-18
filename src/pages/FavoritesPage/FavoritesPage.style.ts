@@ -1,5 +1,6 @@
-import { TextStyled } from '@components/Text/Text.style';
 import styled from 'styled-components';
+
+import { TextStyled } from '@ui/Text/Text.style';
 
 export const FavoritesWrapper = styled.div`
   width: 100%;

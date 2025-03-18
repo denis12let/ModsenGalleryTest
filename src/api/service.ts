@@ -1,5 +1,6 @@
-import { BASE_URL, ACCESS_KEY } from '@constants/api';
 import axios from 'axios';
+
+import { BASE_URL, ACCESS_KEY } from '@constants/api';
 
 export const apiService = axios.create({
   baseURL: BASE_URL,
