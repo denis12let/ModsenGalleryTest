@@ -1,8 +1,8 @@
-import{d as e,T as i,j as t}from"./index-BS9VaUGl.js";import{u as s,C as n,G as r}from"./Gallery-t440xW4g.js";const x=e.div`
+import{d as e,T as i,j as t}from"./index-Cepq7muX.js";import{C as a,G as n}from"./Gallery-B-buTDPi.js";const s=e.div`
   width: 100%;
   padding-bottom: 600px;
   padding-top: 60px;
-`,p=e(i)`
+`,r=e(i)`
   font-family: Lexend Deca;
   font-size: 64px;
   font-weight: 700;
@@ -14,7 +14,7 @@ import{d as e,T as i,j as t}from"./index-BS9VaUGl.js";import{u as s,C as n,G as 
     line-height: 40px;
     max-width: 400px;
   }
-`,d=e(i)`
+`,x=e(i)`
   color: rgb(57, 57, 57);
   font-family: Roboto;
   font-size: 40px;
@@ -25,7 +25,7 @@ import{d as e,T as i,j as t}from"./index-BS9VaUGl.js";import{u as s,C as n,G as 
     font-size: 32px;
     line-height: 38px;
   }
-`,h=e(i)`
+`,p=e(i)`
   color: rgb(224, 164, 73);
   font-family: Roboto;
   font-size: 32px;
@@ -35,4 +35,4 @@ import{d as e,T as i,j as t}from"./index-BS9VaUGl.js";import{u as s,C as n,G as 
     font-size: 24px;
     line-height: 28px;
   }
-`,f=()=>{const{favorites:o}=s(a=>a.images);return t.jsx(x,{children:t.jsx(n,{children:o.length?t.jsxs(t.Fragment,{children:[t.jsx(h,{children:"Saved by you"}),t.jsx(d,{children:"Your favorites list"}),t.jsx(r,{array:o,variant:"image"})]}):t.jsxs(p,{children:["Your ",t.jsx("span",{children:"favorites"})," list is empty"]})})})};export{f as default};
+`,h=()=>{const o=JSON.parse(localStorage.getItem("favorites")||"[]");return t.jsx(s,{children:t.jsx(a,{children:o.length?t.jsxs(t.Fragment,{children:[t.jsx(p,{children:"Saved by you"}),t.jsx(x,{children:"Your favorites list"}),t.jsx(n,{array:o,variant:"image"})]}):t.jsxs(r,{children:["Your ",t.jsx("span",{children:"favorites"})," list is empty"]})})})};export{h as default};
