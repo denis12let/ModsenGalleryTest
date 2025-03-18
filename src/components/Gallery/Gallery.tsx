@@ -4,6 +4,7 @@ import { CategoryCard } from './CategoryCard';
 import { ICategory, IImage } from 'src/types';
 import { ImageCard } from './ImageCard';
 import Modal from '@ui/Modal/Modal';
+import { capitalizeWord } from '@utils/imageUtils';
 
 interface GalleryProps {
   array: IImage[] | ICategory[];
@@ -14,50 +15,42 @@ export const Gallery: FC<GalleryProps> = ({ variant = 'image', array }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState<IImage | undefined>();
 
-  let galleryArray;
-
-  switch (variant) {
-    case 'category':
-      galleryArray = (array as ICategory[]).map((item) => (
-        <GalleryItemWrapper
-          width="285px"
-          height="244px"
-          onClick={() => setIsModalOpen(!isModalOpen)}
-        >
-          <CategoryCard
-            key={item.CATEGORY}
-            src={item.IMG}
-            text={item.CATEGORY}
-          />
-        </GalleryItemWrapper>
-      ));
-      break;
-    case 'image':
-      galleryArray = (array as IImage[]).map((item) => (
-        <GalleryItemWrapper
-          width="285px"
-          height="232px"
-          onClick={() => handleOpenModal(item)}
-        >
-          <ImageCard
-            key={item.id}
-            src={item.urls.small}
-            text={
-              item.alt_description[0].toUpperCase() +
-              item.alt_description.slice(1)
-            }
-            id={item.id}
-            isModal={false}
-          />
-        </GalleryItemWrapper>
-      ));
-      break;
-  }
-
   const handleOpenModal = (image: IImage) => {
     setCurrentImage(image);
     setIsModalOpen(!isModalOpen);
   };
+
+  const getGalleryArray = ({ variant, array }: GalleryProps) => {
+    switch (variant) {
+      case 'category':
+        return (array as ICategory[]).map((item) => (
+          <GalleryItemWrapper
+            onClick={() => setIsModalOpen(!isModalOpen)}
+            key={item.CATEGORY}
+          >
+            <CategoryCard src={item.IMG} text={item.CATEGORY} />
+          </GalleryItemWrapper>
+        ));
+
+      case 'image':
+        console.log(array);
+        return (array as IImage[]).map((item) => (
+          <GalleryItemWrapper
+            onClick={() => handleOpenModal(item)}
+            key={item.id}
+          >
+            <ImageCard
+              src={item.urls.small}
+              text={capitalizeWord(item.description || item.alt_description)}
+              id={item.id}
+              isModal={false}
+            />
+          </GalleryItemWrapper>
+        ));
+    }
+  };
+
+  const galleryArray = getGalleryArray({ variant, array });
 
   return (
     <GalleryGrid>
@@ -68,12 +61,10 @@ export const Gallery: FC<GalleryProps> = ({ variant = 'image', array }) => {
         >
           {currentImage && (
             <ImageCard
-              key={currentImage.id}
               src={currentImage.urls.full}
-              text={
-                currentImage.alt_description[0].toUpperCase() +
-                currentImage.alt_description.slice(1)
-              }
+              text={capitalizeWord(
+                currentImage.description || currentImage.alt_description
+              )}
               id={currentImage.id}
               isModal={true}
             />

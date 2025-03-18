@@ -15,7 +15,7 @@ interface CategoryCardProps {
 export const CategoryCard: FC<CategoryCardProps> = ({ text, src }) => {
   return (
     <NavLink to={APP_ROUTES_PATH.IMAGES + '/' + text}>
-      <CategoryItemWrapper src={src} alt={text}>
+      <CategoryItemWrapper src={src}>
         <CategoryItemInner>
           <CategoryItemText>{text}</CategoryItemText>
         </CategoryItemInner>
