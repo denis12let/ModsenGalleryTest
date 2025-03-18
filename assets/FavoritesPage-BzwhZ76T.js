@@ -1,4 +1,4 @@
-import{d as e,T as i,j as t}from"./index-Cepq7muX.js";import{C as a,G as n}from"./Gallery-B-buTDPi.js";const s=e.div`
+import{d as e,T as i,j as t}from"./index-D8847-Cn.js";import{C as a,G as n}from"./Gallery-CK6wJIBx.js";const s=e.div`
   width: 100%;
   padding-bottom: 600px;
   padding-top: 60px;
