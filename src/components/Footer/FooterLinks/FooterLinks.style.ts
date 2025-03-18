@@ -1,17 +1,18 @@
-import { TextStyled } from '@components/Text/Text.style';
-import { RouterNavLink } from '@ui/NavLink/NavLink.style';
 import styled from 'styled-components';
+
+import { TextStyled } from '@ui/Text/Text.style';
+import { RouterNavLink } from '@ui/NavLink/NavLink.style';
 
 export const FooterLinksContainer = styled.div`
   display: flex;
   max-width: 900px;
   width: 100%;
   justify-content: space-between;
-  @media (max-width: 900px) and (min-width: 500px) {
+  @media ${({ theme }) => theme.media.preLarge} and (min-width: 500px) {
     flex-direction: column;
     align-items: end;
   }
-  @media (max-width: 500px) {
+  @media ${({ theme }) => theme.media.preMedium} {
     flex-direction: column;
     align-items: start;
   }
@@ -21,8 +22,6 @@ export const FooterLinksColumn = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 20px;
-  @media (max-width: 900px) {
-  }
 `;
 
 export const FooterTitle = styled(TextStyled)`
@@ -44,7 +43,7 @@ export const FooterLink = styled(RouterNavLink)`
   &.active {
     color: rgba(255, 255, 255, 0.6);
   }
-  @media (max-width: 900px) {
+  @media ${({ theme }) => theme.media.preLarge} {
     margin-bottom: 0;
   }
 `;
@@ -60,7 +59,7 @@ export const FooterLinkText = styled(TextStyled)`
   text-align: left;
   max-width: 140px;
 
-  @media (max-width: 900px) {
+  @media ${({ theme }) => theme.media.preLarge} {
     display: none;
   }
 `;

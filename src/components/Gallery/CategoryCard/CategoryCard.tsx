@@ -1,11 +1,13 @@
 import { FC } from 'react';
+
+import { NavLink } from '@ui';
+import { APP_ROUTES_PATH } from '@constants/app';
+
 import {
   CategoryItemInner,
   CategoryItemText,
   CategoryItemWrapper,
 } from './CategoryCard.style';
-import { NavLink } from '@ui/NavLink';
-import { APP_ROUTES_PATH } from '@constants/app';
 
 interface CategoryCardProps {
   text: string;
@@ -15,7 +17,7 @@ interface CategoryCardProps {
 export const CategoryCard: FC<CategoryCardProps> = ({ text, src }) => {
   return (
     <NavLink to={APP_ROUTES_PATH.IMAGES + '/' + text}>
-      <CategoryItemWrapper src={src} alt={text}>
+      <CategoryItemWrapper src={src}>
         <CategoryItemInner>
           <CategoryItemText>{text}</CategoryItemText>
         </CategoryItemInner>

@@ -1,14 +1,16 @@
-import { HeaderInner, HeaderWrapper } from './Header.style';
-import { NavLink } from '@ui/NavLink/NavLink';
-import { Navbar } from './Navbar';
-import { APP_ROUTES_PATH } from '@constants/app';
-import { useScreenWidth } from '@hooks/useScreenWidth';
-import { Button } from '@ui/Button';
-import { Icons } from '@assets/icons';
-import { theme } from '@styles/theme';
-import { ResponsiveLogo } from './ResponsiveLogo';
 import { useState } from 'react';
+
+import { APP_ROUTES_PATH } from '@constants/app';
+import { useScreenWidth } from '@hooks';
+import { Button, NavLink } from '@ui';
+import { Icons } from '@assets';
+import { theme } from '@styles';
+
+import { Navbar } from './Navbar';
+import { ResponsiveLogo } from './ResponsiveLogo';
 import { BurgerMenu } from './BurgerMenu';
+
+import { HeaderInner, HeaderWrapper } from './Header.style';
 
 export const Header = () => {
   const currentWidth = useScreenWidth();

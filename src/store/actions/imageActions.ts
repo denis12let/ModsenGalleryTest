@@ -1,10 +1,16 @@
-import { ImageService } from '@api/ImageService';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { IImage, IImagesResponse } from 'src/types';
+
+import { ImageService } from '@api/ImageService';
+import {
+  IImage,
+  IImagesResponse,
+  IPaginationParams,
+  IPaginationQuerryParams,
+} from 'src/types';
 
 export const fetchAllImages = createAsyncThunk<
   IImage[],
-  { page?: number; perPage?: number; orderBy?: string },
+  IPaginationParams,
   { rejectValue: string }
 >(
   'images/fetchAll',
@@ -36,7 +42,7 @@ export const fetchOneImage = createAsyncThunk<
 
 export const fetchImageByTag = createAsyncThunk<
   IImagesResponse,
-  { query: string; page?: number; perPage?: number; orderBy?: string },
+  IPaginationQuerryParams,
   { rejectValue: string }
 >(
   'images/search',

@@ -27,14 +27,9 @@ export const PaginationButton = styled.button<{ isActive?: boolean }>`
   &:hover {
     background-color: ${({ isActive }) => (isActive ? '#f79c40' : '#f0f0f0')};
   }
-
-  &:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
   font-family: Lexend Deca;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: ${({ isActive }) => (isActive ? '600' : '300')};
   line-height: 24px;
 `;
 

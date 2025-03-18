@@ -1,12 +1,21 @@
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import { Container } from '@components/Container';
 import { HeroSection } from '@components/HeroSection';
-import { useLocation } from 'react-router-dom';
 import { Gallery } from '@components/Gallery';
-import { IMAGES_CATEGORIES } from '@constants/ImagesCategories';
-import { useEffect, useState } from 'react';
-import { useAppDispatch } from '@hooks/useAppDispatch';
-import { useAppSelector } from '@hooks/useAppSelector';
-import { fetchAllImages, fetchImageByTag } from '@store/actions';
+
+import { useAppDispatch, useAppSelector, useDebounce } from '@hooks';
+import { Icons } from '@assets';
+import { Pagination, Select, Loader, Input } from '@ui';
+import { options } from '@constants/Images';
+import {
+  imagesActions,
+  imageSelectors,
+  fetchAllImages,
+  fetchImageByTag,
+} from '@store';
+
 import { HeroText } from '@components/HeroSection/HeroSection.style';
 import {
   ImagesNotFoundText,
@@ -15,27 +24,19 @@ import {
   SelectText,
   SelectWrapper,
 } from './ImagesPage.style';
-import { Input } from '@ui/Input';
-import { Icons } from '@assets/icons';
-import useDebounce from '@hooks/UseDebounce';
-import { Loader } from '@ui/Loader';
-import { clearImages, setImages } from '@store/reducers/imageSlice';
-import { Option, Select } from '@ui/Select';
-import { Pagination } from '@ui/Pagination';
 
 const ImagesPage = () => {
-  const options: Option[] = [
-    { id: 1, value: 'popular', label: 'Relevant' },
-    { id: 2, value: 'latest', label: 'Latest' },
-  ];
-
   const dispatch = useAppDispatch();
   const { images, isLoading, pagination } = useAppSelector(
-    (state) => state.images
+    imageSelectors.getSlice
   );
   const [currentPage, setCurrentPage] = useState(1);
   const [value, setValue] = useState('');
   const [sortValue, setSortedValue] = useState(options[0].value);
+
+  const location = useLocation();
+  // @ts-expect-error
+  const path = location.pathname.split('/').at(-1).toLowerCase();
 
   const handleChangeValue = (text: string) => {
     setValue(text);
@@ -43,58 +44,36 @@ const ImagesPage = () => {
 
   const debouncedSearch = useDebounce(value, 400);
 
-  const sortImages = () =>
-    [...images].sort((a, b) => {
-      if (sortValue === 'popular') {
-        return b.likes - a.likes;
-      } else {
-        return (
-          new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
-        );
-      }
-    });
-
   useEffect(() => {
-    if (debouncedSearch || sortValue) {
-      if (value) {
-        dispatch(
-          fetchImageByTag({
-            query: value,
-            orderBy: sortValue,
-            page: currentPage,
-          })
-        );
-      } else {
-        dispatch(setImages(sortImages()));
-      }
+    if (value !== '') setCurrentPage(1);
+    if (debouncedSearch) {
+      dispatch(
+        fetchImageByTag({
+          query: value,
+          orderBy: sortValue,
+          page: currentPage,
+        })
+      );
     }
-  }, [debouncedSearch, sortValue, currentPage]);
-
-  const location = useLocation();
-  // @ts-expect-error
-  const path = location.pathname.split('/').at(-1).toLowerCase();
-  const isImages = location.pathname.includes('images');
-
-  let imagesArray;
+  }, [debouncedSearch]);
 
   useEffect(() => {
-    if (path === 'images') {
-      dispatch(fetchAllImages({}));
+    if (path === 'images' && value === '') {
+      dispatch(fetchAllImages({ page: currentPage, orderBy: sortValue }));
     } else {
-      value === '' &&
-        dispatch(fetchImageByTag({ query: path, page: currentPage }));
+      dispatch(
+        fetchImageByTag({
+          query: path === 'images' ? value : path,
+          page: currentPage,
+          orderBy: sortValue,
+        })
+      );
     }
 
     return () => {
-      dispatch(clearImages());
+      dispatch(imagesActions.clearImages());
     };
-  }, [currentPage]);
-
-  if (isImages) {
-    imagesArray = images;
-  } else {
-    imagesArray = IMAGES_CATEGORIES;
-  }
+  }, [currentPage, sortValue]);
 
   return (
     <>
@@ -112,6 +91,14 @@ const ImagesPage = () => {
         </InputWrapper>
       </HeroSection>
       <Container>
+        <SelectWrapper>
+          <SelectText>Sort by</SelectText>
+          <Select
+            options={options}
+            value={sortValue}
+            setValue={setSortedValue}
+          />
+        </SelectWrapper>
         {isLoading ? (
           <Loader />
         ) : !images.length ? (
@@ -119,30 +106,13 @@ const ImagesPage = () => {
             The search didn't yield any results, please try <span>again</span>.
           </ImagesNotFoundText>
         ) : (
-          <>
-            <SelectWrapper>
-              <SelectText>Sort by</SelectText>
-              <Select
-                options={options}
-                value={sortValue}
-                setValue={setSortedValue}
-              />
-            </SelectWrapper>
-            <Gallery
-              array={imagesArray}
-              variant={isImages ? 'image' : 'category'}
-            />
-            {value || path !== 'images' ? (
-              <Pagination
-                currentPage={currentPage}
-                totalPages={pagination.total_pages || 1}
-                onPageChange={setCurrentPage}
-              />
-            ) : (
-              <></>
-            )}
-          </>
+          <Gallery array={images} variant={'image'} />
         )}
+        <Pagination
+          currentPage={currentPage || 1}
+          totalPages={pagination.total_pages || 1000}
+          onPageChange={setCurrentPage}
+        />
       </Container>
     </>
   );

@@ -1,4 +1,8 @@
 import { FC } from 'react';
+
+import { Icons } from '@assets';
+import { GlobalStyle } from '@styles';
+
 import {
   ModalProps,
   Overlay,
@@ -6,10 +10,8 @@ import {
   CloseButton,
   Content,
 } from './Modal.style';
-import { Icons } from '@assets/icons';
-import { GlobalStyle } from '@styles/global';
 
-const Modal: FC<ModalProps> = ({ children, isOpen, onClose }) => {
+export const Modal: FC<ModalProps> = ({ children, isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (

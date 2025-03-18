@@ -1,5 +1,6 @@
-import { theme } from '@styles/theme';
 import { FC, SVGProps } from 'react';
+
+import { theme } from '@styles';
 
 export const Arrow: FC<SVGProps<SVGSVGElement>> = ({
   color = theme.colors.black,

@@ -16,12 +16,6 @@ export const theme = {
     small: '18px',
     normal: '20px',
   },
-  fontWeights: {
-    400: 400,
-    500: 500,
-    600: 600,
-    700: 700,
-  },
   gradients: {
     background: `linear-gradient( 90deg,
     rgb(52, 51, 51) 38.048%,
@@ -42,5 +36,9 @@ export const theme = {
   },
   media: {
     small: '(max-width: 390px)',
+    preMedium: '(max-width: 500px)',
+    medium: '(max-width: 600px)',
+    preLarge: '(max-width: 900px)',
+    large: '(max-width: 1000px)',
   },
 };

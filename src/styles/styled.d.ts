@@ -19,12 +19,6 @@ declare module 'styled-components' {
       small: string;
       normal: string;
     };
-    fontWeights: {
-      400: number;
-      500: number;
-      600: number;
-      700: number;
-    };
     gradients: {
       background: string;
     };
@@ -42,6 +36,10 @@ declare module 'styled-components' {
     };
     media: {
       small: string;
+      preMedium: string;
+      medium: string;
+      preLarge: string;
+      large: string;
     };
   }
 }

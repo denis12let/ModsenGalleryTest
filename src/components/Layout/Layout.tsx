@@ -1,8 +1,9 @@
-import { Footer } from '../Footer';
-import { Header } from '../Header';
-import { LayoutWrapper } from './Layout.style';
 import { FC, ReactNode } from 'react';
+
+import { Header, Footer } from '@components';
 import { Main } from './Main';
+
+import { LayoutWrapper } from './Layout.style';
 
 interface LayoutProps {
   children: ReactNode;

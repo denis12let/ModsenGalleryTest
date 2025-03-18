@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 
-export interface ImageItemWrapper {
-  width: string;
-  height: string;
-}
-
 export const GalleryGrid = styled.div`
   display: grid;
   gap: 26px;
@@ -13,7 +8,7 @@ export const GalleryGrid = styled.div`
 
   grid-template-columns: repeat(3, 1fr);
 
-  @media (max-width: 1000px) {
+  @media ${({ theme }) => theme.media.large} {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -23,11 +18,11 @@ export const GalleryGrid = styled.div`
   }
 `;
 
-export const GalleryItemWrapper = styled.div<ImageItemWrapper>`
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
+export const GalleryItemWrapper = styled.div`
+  width: 285px;
+  height: 238px;
 
-  @media (max-width: 1000px) {
+  @media ${({ theme }) => theme.media.large} {
     width: 100%;
     height: 170px;
   }
