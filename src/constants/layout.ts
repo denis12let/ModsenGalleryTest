@@ -1,4 +1,4 @@
-import { Component, FC, SVGProps } from 'react';
+import { FC, SVGProps } from 'react';
 import { Icons } from '@assets/icons';
 import { APP_ROUTES_PATH } from './app';
 
@@ -15,7 +15,7 @@ export const FOOTER_LINKS = [
   {
     TITLE: 'Help',
     LINKS: [
-      { TEXT: 'CusTOmer Support', TO: '/#' },
+      { TEXT: 'Customer Support', TO: '/#' },
       { TEXT: 'Delivery Details', TO: '/#' },
       { TEXT: 'Terms & Conditions', TO: '/#' },
       { TEXT: 'Privacy Policy', TO: '/#' },
@@ -35,7 +35,7 @@ export const FOOTER_LINKS = [
     LINKS: [
       { TEXT: 'Free eBooks', TO: '/#' },
       { TEXT: 'Development TuTOrial', TO: '/#' },
-      { TEXT: 'How TO - Blog', TO: '/#' },
+      { TEXT: 'How to - Blog', TO: '/#' },
       { TEXT: 'Youtube Playlist', TO: '/#' },
     ],
   },

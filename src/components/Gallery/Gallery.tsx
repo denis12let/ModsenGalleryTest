@@ -33,7 +33,6 @@ export const Gallery: FC<GalleryProps> = ({ variant = 'image', array }) => {
         ));
 
       case 'image':
-        console.log(array);
         return (array as IImage[]).map((item) => (
           <GalleryItemWrapper
             onClick={() => handleOpenModal(item)}

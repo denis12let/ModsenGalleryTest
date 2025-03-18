@@ -11,7 +11,7 @@ import { theme } from '@styles/theme';
 import { getIconSize, getTextWidth, truncateText } from '@utils/imageUtils';
 import { useAppSelector } from '@hooks/useAppSelector';
 import { useAppDispatch } from '@hooks/useAppDispatch';
-import { setFavorite, unsetFavorite } from '@store/reducers/imageSlice';
+import { imagesActions } from '@store/reducers/imageSlice';
 import { useScreenWidth } from '@hooks/useScreenWidth';
 
 interface ImageCardProps {
@@ -32,9 +32,9 @@ export const ImageCard: FC<ImageCardProps> = ({ src, text, id, isModal }) => {
   const handleFavoriteToggle = (e: MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     if (isFavorite) {
-      dispatch(unsetFavorite(id));
+      dispatch(imagesActions.unsetFavorite(id));
     } else {
-      dispatch(setFavorite(id));
+      dispatch(imagesActions.setFavorite(id));
     }
   };
 

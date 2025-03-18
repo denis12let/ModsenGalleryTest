@@ -18,15 +18,15 @@ import { Input } from '@ui/Input';
 import { Icons } from '@assets/icons';
 import useDebounce from '@hooks/UseDebounce';
 import { Loader } from '@ui/Loader';
-import { clearImages } from '@store/reducers/imageSlice';
 import { Select } from '@ui/Select';
 import { Pagination } from '@ui/Pagination';
 import { options } from '@constants/Images';
+import { imagesActions, imageSelectors } from '@store/reducers/imageSlice';
 
 const ImagesPage = () => {
   const dispatch = useAppDispatch();
   const { images, isLoading, pagination } = useAppSelector(
-    (state) => state.images
+    imageSelectors.getSlice
   );
   const [currentPage, setCurrentPage] = useState(1);
   const [value, setValue] = useState('');
@@ -69,7 +69,7 @@ const ImagesPage = () => {
     }
 
     return () => {
-      dispatch(clearImages());
+      dispatch(imagesActions.clearImages());
     };
   }, [currentPage, sortValue]);
 
@@ -108,7 +108,7 @@ const ImagesPage = () => {
         )}
         <Pagination
           currentPage={currentPage || 1}
-          totalPages={pagination.total_pages || 1}
+          totalPages={pagination.total_pages || 1000}
           onPageChange={setCurrentPage}
         />
       </Container>

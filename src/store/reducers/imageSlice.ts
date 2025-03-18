@@ -103,8 +103,14 @@ const imagesSlice = createSlice({
         state.error = action.payload as string;
       });
   },
+  selectors: {
+    getImages: (state: ImagesState) => state.images,
+    getSlice: (state: ImagesState) => state,
+  },
 });
 
-export const { reducer: imageReducer, selectors: imageSelectors } = imagesSlice;
-export const { setFavorite, unsetFavorite, clearImages, setImages } =
-  imagesSlice.actions;
+export const {
+  reducer: imageReducer,
+  selectors: imageSelectors,
+  actions: imagesActions,
+} = imagesSlice;
