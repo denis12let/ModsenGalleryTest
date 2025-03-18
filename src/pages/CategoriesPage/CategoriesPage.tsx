@@ -1,7 +1,7 @@
 import { HeroSection } from '@components/HeroSection';
 import { Container } from '@components/Container';
 import { Gallery } from '@components/Gallery';
-import { IMAGES_CATEGORIES } from '@constants/ImagesCategories';
+import { IMAGES_CATEGORIES } from '@constants/Images';
 import { HeroText } from '@components/HeroSection/HeroSection.style';
 
 const CategoriesPage = () => {

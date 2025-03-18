@@ -1,3 +1,5 @@
+import { IImage } from 'src/types';
+
 export const truncateText = (text: string, len: number) => {
   if (text.length > len) {
     return text.slice(0, len) + '...';
@@ -7,6 +9,7 @@ export const truncateText = (text: string, len: number) => {
 };
 
 export const capitalizeWord = (text: string) => {
+  if (!text) return '';
   return text[0].toUpperCase() + text.slice(1);
 };
 

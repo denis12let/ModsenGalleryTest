@@ -22,7 +22,7 @@ const FavoritesPage = () => {
           <>
             <FavoritesSubtitle>Saved by you</FavoritesSubtitle>
             <FavoritesTitle>Your favorites list</FavoritesTitle>
-            <Gallery array={favorites} variant={'image'} />
+            <Gallery array={favorites} variant="image" />
           </>
         )}
       </Container>

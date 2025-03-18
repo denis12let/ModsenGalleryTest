@@ -69,7 +69,7 @@ button {
 @font-face {
   font-family: 'Lexend Deca';
   src: url(${Lexend_Deca});
-  font-weight: 500 700;
+  font-weight: 300 700;
   font-style: normal;
   font-display: swap;
 }

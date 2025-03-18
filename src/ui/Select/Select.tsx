@@ -6,12 +6,7 @@ import {
   OptionItem,
 } from './Select.style';
 import { Icons } from '@assets/icons';
-
-export interface Option {
-  id: number;
-  value: string;
-  label: string;
-}
+import { Option } from 'src/types';
 
 interface SelectProps {
   options: Option[];

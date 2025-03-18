@@ -3,10 +3,11 @@ import { CategoriesPage } from '@pages/CategoriesPage';
 import { FavoritesPage } from '@pages/FavoritesPage';
 import { ImagesPage } from '@pages/ImagesPage';
 import { NotFoundPage } from '@pages/NotFoundPage';
+import { LazyExoticComponent, ComponentType } from 'react';
 
 export interface AppRoutesProps {
   path: string;
-  element: React.LazyExoticComponent<React.ComponentType<any>>;
+  element: LazyExoticComponent<ComponentType<any>>;
 }
 
 export const routes = {
