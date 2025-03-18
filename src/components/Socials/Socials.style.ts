@@ -15,8 +15,25 @@ export const SocialItemStyled = styled.li<SocialItemStyledProps>`
   width: 28px;
   height: 28px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  background: ${({ backgroundcolor }) => backgroundcolor || theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.white};
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    color: ${({ theme }) => theme.colors.black};
+    fill: ${({ theme }) => theme.colors.black};
+  }
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.yellow};
+    color: ${({ theme }) => theme.colors.white};
+
+    svg {
+      color: ${({ theme }) => theme.colors.white};
+      fill: ${({ theme }) => theme.colors.white};
+    }
+  }
 `;
 
 export const SocialLinkStyled = styled(NavLink)`

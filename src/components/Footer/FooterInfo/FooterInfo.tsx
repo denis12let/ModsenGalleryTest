@@ -1,7 +1,7 @@
 import { FooterInfoStyled, FooterLogo } from './FooterInfo.style';
 import { Icons } from '@assets/icons';
-import { TextStyledProps } from '@components/Text/Text.style';
-import { Text } from '@components/Text';
+import { TextStyledProps } from '@ui/Text/Text.style';
+import { Text } from '@ui/Text';
 import { Socials } from '@components/Socials';
 
 const textStyles: TextStyledProps = {

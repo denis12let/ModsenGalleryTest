@@ -15,8 +15,7 @@ export interface TextStyledProps {
 export const TextStyled = styled.p<TextStyledProps>`
   color: ${({ color }) => color || 'inherit'};
   font-size: ${({ fontSize, theme }) => fontSize || theme.fontSizes.normal};
-  font-weight: ${({ fontWeight, theme }) =>
-    fontWeight || theme.fontWeights[400]};
+  font-weight: ${({ fontWeight }) => fontWeight || '400'};
   text-align: ${({ textalign }) => textalign || 'left'};
   line-height: ${({ lineheight }) => lineheight || '19px'};
   margin: ${({ margin }) => margin || '0'};

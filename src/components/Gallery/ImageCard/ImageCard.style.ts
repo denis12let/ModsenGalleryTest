@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { TextStyled } from '@components/Text/Text.style';
+import { TextStyled } from '@ui/Text/Text.style';
 
 interface ImageItemProps {
   src: string;
-  alt: string;
 }
 
 interface ImageItemTextProps {
@@ -43,7 +42,7 @@ export const ImageItemInner = styled.div`
   background-color: #fff;
   border: 1px solid rgb(240, 241, 241);
 
-  @media (max-width: 1000px) {
+  @media ${({ theme }) => theme.media.large} {
     height: 35px;
   }
 `;
@@ -57,7 +56,7 @@ export const ImageItemText = styled(TextStyled)<ImageItemTextProps>`
   line-height: 26.32px;
   letter-spacing: -3%;
   text-align: left;
-  @media (max-width: 1000px) {
+  @media ${({ theme }) => theme.media.large} {
     text-wrap: nowrap;
   }
 `;
@@ -80,7 +79,7 @@ export const FavoriteButton = styled.div`
     background-color: inherit;
   }
 
-  @media (max-width: 1000px) {
+  @media ${({ theme }) => theme.media.large} {
     width: 29px;
     height: 29px;
   }

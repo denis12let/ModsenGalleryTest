@@ -19,6 +19,7 @@ export interface IImage {
   width: number;
   height: number;
   color: string;
+  description: string;
   alt_description: string;
   urls: ImageUrls;
   tags: Tag[];
@@ -44,4 +45,10 @@ export interface IPaginationParams {
 
 export interface IPaginationQuerryParams extends IPaginationParams {
   query: string;
+}
+
+export interface Option {
+  id: number;
+  value: string;
+  label: string;
 }

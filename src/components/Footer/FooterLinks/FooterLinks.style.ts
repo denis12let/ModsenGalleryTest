@@ -1,4 +1,4 @@
-import { TextStyled } from '@components/Text/Text.style';
+import { TextStyled } from '@ui/Text/Text.style';
 import { RouterNavLink } from '@ui/NavLink/NavLink.style';
 import styled from 'styled-components';
 

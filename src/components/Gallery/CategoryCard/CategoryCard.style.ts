@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { TextStyled } from '@components/Text/Text.style';
+import { TextStyled } from '@ui/Text/Text.style';
 
 interface CategoryItemProps {
   src: string;
-  alt: string;
 }
 
 export const CategoryItemWrapper = styled.div<CategoryItemProps>`
@@ -18,7 +17,7 @@ export const CategoryItemWrapper = styled.div<CategoryItemProps>`
   background-size: cover;
   padding: 10px;
 
-  @media (max-width: 1000px) {
+  @media ${({ theme }) => theme.media.large} {
     height: 180px;
   }
 `;

@@ -64,3 +64,22 @@ export const NavItems: NavItem[] = [
     text: 'Favorites',
   },
 ];
+
+export const socials = [
+  {
+    to: 'https://x.com/',
+    icon: Icons.Twitter,
+  },
+  {
+    to: 'https://www.facebook.com/',
+    icon: Icons.Facebook,
+  },
+  {
+    to: 'https://www.instagram.com/',
+    icon: Icons.Instagram,
+  },
+  {
+    to: 'https://github.com/',
+    icon: Icons.Github,
+  },
+];
