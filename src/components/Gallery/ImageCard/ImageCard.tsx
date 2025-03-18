@@ -1,19 +1,19 @@
 import { FC, MouseEvent } from 'react';
+
+import { useAppDispatch, useScreenWidth } from '@hooks';
+import { getIconSize, getTextWidth, truncateText } from '@utils';
+import { imagesActions } from '@store';
+import { Icons } from '@assets';
+import { Button } from '@ui';
+import { IImage } from 'src/types';
+
+import { theme } from '@styles/theme';
 import {
   ImageItemWrapper,
   ImageItemInner,
   ImageItemText,
   FavoriteButton,
 } from './ImageCard.style';
-import { Button } from '@ui/Button';
-import { Icons } from '@assets/icons';
-import { theme } from '@styles/theme';
-import { getIconSize, getTextWidth, truncateText } from '@utils/imageUtils';
-import { useAppSelector } from '@hooks/useAppSelector';
-import { useAppDispatch } from '@hooks/useAppDispatch';
-import { imagesActions } from '@store/reducers/imageSlice';
-import { useScreenWidth } from '@hooks/useScreenWidth';
-import { IImage } from 'src/types';
 
 interface ImageCardProps {
   text: string;
