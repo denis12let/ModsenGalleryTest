@@ -1,6 +1,7 @@
 import { FC, SVGProps } from 'react';
-import { Icons } from '@assets/icons';
+
 import { APP_ROUTES_PATH } from './app';
+import { Icons } from '@assets';
 
 export const FOOTER_LINKS = [
   {

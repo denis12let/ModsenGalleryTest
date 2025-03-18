@@ -1,6 +1,7 @@
+import styled from 'styled-components';
+
 import { TextStyled } from '@ui/Text/Text.style';
 import { RouterNavLink } from '@ui/NavLink/NavLink.style';
-import styled from 'styled-components';
 
 export const FooterLinksContainer = styled.div`
   display: flex;

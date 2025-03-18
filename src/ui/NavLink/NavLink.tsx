@@ -1,5 +1,6 @@
-import { RouterNavLink, RouterNavLinkProps } from './NavLink.style';
 import { FC, ReactNode } from 'react';
+
+import { RouterNavLink, RouterNavLinkProps } from './NavLink.style';
 
 interface NavLinkProps extends RouterNavLinkProps {
   children: ReactNode;

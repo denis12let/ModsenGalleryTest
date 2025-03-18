@@ -1,7 +1,9 @@
 import { FC, ReactNode } from 'react';
+
+import { NavLink } from '@ui';
+
 import { NavbarItemStyled } from './NavbarItem.style';
-import { NavLink } from '@ui/NavLink';
-import { theme } from '@styles/theme';
+import { theme } from '@styles';
 
 interface NavbarItemProps {
   to: string;

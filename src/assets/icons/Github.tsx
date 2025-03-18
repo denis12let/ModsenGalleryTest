@@ -1,5 +1,4 @@
 import { FC, SVGProps } from 'react';
-import { theme } from '@styles/theme';
 
 export const Github: FC<SVGProps<SVGSVGElement>> = ({ color }) => (
   <svg

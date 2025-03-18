@@ -1,6 +1,6 @@
-import { theme } from '@styles/theme';
-import { NavLink } from '@ui/NavLink';
 import styled from 'styled-components';
+
+import { NavLink } from '@ui';
 
 interface SocialItemStyledProps {
   backgroundcolor?: string;

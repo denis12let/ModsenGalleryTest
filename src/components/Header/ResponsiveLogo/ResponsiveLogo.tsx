@@ -1,8 +1,9 @@
-import { Logo } from '@assets/icons/Logo';
+import { Icons } from '@assets';
+
 import { LogoWrapper } from './ResponsiveLogo.style';
 
 export const ResponsiveLogo = () => (
   <LogoWrapper>
-    <Logo />
+    <Icons.Logo />
   </LogoWrapper>
 );

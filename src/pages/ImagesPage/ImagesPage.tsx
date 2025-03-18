@@ -1,11 +1,21 @@
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import { Container } from '@components/Container';
 import { HeroSection } from '@components/HeroSection';
-import { useLocation } from 'react-router-dom';
 import { Gallery } from '@components/Gallery';
-import { useEffect, useState } from 'react';
-import { useAppDispatch } from '@hooks/useAppDispatch';
-import { useAppSelector } from '@hooks/useAppSelector';
-import { fetchAllImages, fetchImageByTag } from '@store/actions';
+
+import { useAppDispatch, useAppSelector, useDebounce } from '@hooks';
+import { Icons } from '@assets';
+import { Pagination, Select, Loader, Input } from '@ui';
+import { options } from '@constants/Images';
+import {
+  imagesActions,
+  imageSelectors,
+  fetchAllImages,
+  fetchImageByTag,
+} from '@store';
+
 import { HeroText } from '@components/HeroSection/HeroSection.style';
 import {
   ImagesNotFoundText,
@@ -14,14 +24,6 @@ import {
   SelectText,
   SelectWrapper,
 } from './ImagesPage.style';
-import { Input } from '@ui/Input';
-import { Icons } from '@assets/icons';
-import useDebounce from '@hooks/UseDebounce';
-import { Loader } from '@ui/Loader';
-import { Select } from '@ui/Select';
-import { Pagination } from '@ui/Pagination';
-import { options } from '@constants/Images';
-import { imagesActions, imageSelectors } from '@store/reducers/imageSlice';
 
 const ImagesPage = () => {
   const dispatch = useAppDispatch();

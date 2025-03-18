@@ -1,10 +1,10 @@
-import { theme } from '@styles/theme';
+import { theme } from '@styles';
+import { socials } from '@constants/layout';
 import {
   SocialItemStyled,
   SocialLinkStyled,
   SocialsStyled,
 } from './Socials.style';
-import { socials } from '@constants/layout';
 
 export const Socials = () => {
   return (

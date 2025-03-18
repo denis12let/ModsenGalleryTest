@@ -1,5 +1,6 @@
-import { TextStyled } from '@ui/Text/Text.style';
 import styled from 'styled-components';
+
+import { TextStyled } from '@ui/Text/Text.style';
 
 export const NotFoundText = styled(TextStyled)`
   font-family: Lexend Deca;

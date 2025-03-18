@@ -1,4 +1,3 @@
-import { theme } from '@styles/theme';
 import { FC, SVGProps } from 'react';
 
 export const Facebook: FC<SVGProps<SVGSVGElement>> = ({ color }) => (

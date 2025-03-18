@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { TextStyled } from '@ui/Text/Text.style';
 import heroBg from '@assets/images/heroSectionBg.png';
 

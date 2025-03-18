@@ -1,11 +1,12 @@
-import { Menu } from './Navbar.style';
-import { APP_ROUTES_PATH } from '@constants/app';
-import { Icons } from '@assets/icons';
-import { Text } from '@ui/Text';
-import { NavbarItem } from './NavbarItem';
 import { FC } from 'react';
-import { TextStyledProps } from '@ui/Text/Text.style';
+
+import { Text } from '@ui';
 import { NavItems } from '@constants/layout';
+
+import { NavbarItem } from './NavbarItem';
+
+import { TextStyledProps } from '@ui/Text/Text.style';
+import { Menu } from './Navbar.style';
 
 interface NavbarProps {
   isRow?: boolean;

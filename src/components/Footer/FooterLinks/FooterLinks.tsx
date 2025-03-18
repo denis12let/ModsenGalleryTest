@@ -1,4 +1,5 @@
 import { FOOTER_LINKS } from '@constants/layout';
+
 import {
   FooterLink,
   FooterLinksColumn,

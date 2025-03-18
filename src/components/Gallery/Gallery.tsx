@@ -1,10 +1,13 @@
 import { FC, useState } from 'react';
-import { GalleryGrid, GalleryItemWrapper } from './Gallery.style';
-import { CategoryCard } from './CategoryCard';
+
+import { Modal } from '@ui';
+import { capitalizeWord } from '@utils';
 import { ICategory, IImage } from 'src/types';
+
+import { CategoryCard } from './CategoryCard';
 import { ImageCard } from './ImageCard';
-import Modal from '@ui/Modal/Modal';
-import { capitalizeWord } from '@utils/imageUtils';
+
+import { GalleryGrid, GalleryItemWrapper } from './Gallery.style';
 
 interface GalleryProps {
   array: IImage[] | ICategory[];

@@ -1,5 +1,6 @@
+import styled from 'styled-components';
+
 import { TextStyled } from '@ui/Text/Text.style';
-import { styled } from 'styled-components';
 
 export const InputWrapper = styled.div`
   position: relative;

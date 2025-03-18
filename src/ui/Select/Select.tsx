@@ -1,12 +1,14 @@
 import { FC, useState } from 'react';
+
+import { Icons } from '@assets/icons';
+import { Option } from 'src/types';
+
 import {
   SelectContainer,
   SelectedValue,
   OptionsList,
   OptionItem,
 } from './Select.style';
-import { Icons } from '@assets/icons';
-import { Option } from 'src/types';
 
 interface SelectProps {
   options: Option[];

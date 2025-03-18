@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+
 import Lexend_Deca from '/fonts/Lexend_Deca/LexendDeca-VariableFont_wght.ttf';
 import Signika from '/fonts/Signika/Signika-VariableFont_GRAD,wght.ttf';
 import Montserrat from '/fonts/Montserrat/Montserrat-VariableFont_wght.ttf';

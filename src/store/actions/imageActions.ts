@@ -1,10 +1,12 @@
+import { createAsyncThunk } from '@reduxjs/toolkit';
+
+import { ImageService } from '@api/ImageService';
 import {
+  IImage,
+  IImagesResponse,
   IPaginationParams,
   IPaginationQuerryParams,
-} from './../../types/image';
-import { ImageService } from '@api/ImageService';
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import { IImage, IImagesResponse } from 'src/types';
+} from 'src/types';
 
 export const fetchAllImages = createAsyncThunk<
   IImage[],

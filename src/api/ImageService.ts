@@ -1,5 +1,4 @@
-import { IImagesResponse } from './../types/image';
-import { IImage } from 'src/types';
+import { IImage, IImagesResponse } from 'src/types';
 import { apiService } from './service';
 
 export class ImageService {

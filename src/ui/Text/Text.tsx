@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react';
+
 import { TextStyled, TextStyledProps } from './Text.style';
 
 interface TextProps extends TextStyledProps {

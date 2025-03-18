@@ -1,12 +1,13 @@
-import { Container } from '@components/Container';
-import { Gallery } from '@components/Gallery';
+import { Container, Gallery } from '@components';
+
+import { IImage } from 'src/types';
+
 import {
   FavoritesNotFoundText,
   FavoritesSubtitle,
   FavoritesTitle,
   FavoritesWrapper,
 } from './FavoritesPage.style';
-import { IImage } from 'src/types';
 
 const FavoritesPage = () => {
   const favorites: IImage[] = JSON.parse(

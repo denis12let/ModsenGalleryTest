@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { fetchAllImages, fetchImageByTag, fetchOneImage } from '@store/actions';
+
+import { fetchAllImages, fetchImageByTag, fetchOneImage } from '@store';
 import { IImage, IImagesResponse } from 'src/types';
 
 interface ImagesState {
