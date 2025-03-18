@@ -13,6 +13,7 @@ import { useAppSelector } from '@hooks/useAppSelector';
 import { useAppDispatch } from '@hooks/useAppDispatch';
 import { imagesActions } from '@store/reducers/imageSlice';
 import { useScreenWidth } from '@hooks/useScreenWidth';
+import { IImage } from 'src/types';
 
 interface ImageCardProps {
   text: string;
@@ -25,7 +26,10 @@ export const ImageCard: FC<ImageCardProps> = ({ src, text, id, isModal }) => {
   const width = useScreenWidth();
 
   const dispatch = useAppDispatch();
-  const { favorites } = useAppSelector((state) => state.images);
+
+  const favorites: IImage[] = JSON.parse(
+    localStorage.getItem('favorites') || '[]'
+  );
 
   const isFavorite = favorites.some((item) => item.id === id);
 
