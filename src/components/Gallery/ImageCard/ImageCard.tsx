@@ -1,11 +1,10 @@
-import { FC, MouseEvent } from 'react';
+import { FC, MouseEvent, useEffect } from 'react';
 
-import { useAppDispatch, useScreenWidth } from '@hooks';
+import { useAppDispatch, useAppSelector, useScreenWidth } from '@hooks';
 import { getIconSize, getTextWidth, truncateText } from '@utils';
-import { imagesActions } from '@store';
+import { imagesActions, imageSelectors } from '@store';
 import { Icons } from '@assets';
 import { Button } from '@ui';
-import { IImage } from 'src/types';
 
 import { theme } from '@styles/theme';
 import {
@@ -26,21 +25,19 @@ export const ImageCard: FC<ImageCardProps> = ({ src, text, id, isModal }) => {
   const width = useScreenWidth();
 
   const dispatch = useAppDispatch();
-
-  const favorites: IImage[] = JSON.parse(
-    localStorage.getItem('favorites') || '[]'
-  );
+  const favorites = useAppSelector(imageSelectors.getFavorites);
 
   const isFavorite = favorites.some((item) => item.id === id);
 
   const handleFavoriteToggle = (e: MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
-    if (isFavorite) {
-      dispatch(imagesActions.unsetFavorite(id));
-    } else {
-      dispatch(imagesActions.setFavorite(id));
-    }
+
+    dispatch(imagesActions.toggleFavorite(id));
   };
+
+  useEffect(() => {
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }, [favorites]);
 
   const iconProperties = {
     ...getIconSize(isModal, width),

@@ -31,18 +31,27 @@ const imagesSlice = createSlice({
   name: 'images',
   initialState,
   reducers: {
-    setFavorite(state, action: PayloadAction<string>) {
-      const storeFavorites = JSON.parse(
-        localStorage.getItem('favorites') || '[]'
+    toggleFavorite(state, action: PayloadAction<string>) {
+      const isInclude = state.favorites.some(
+        (item) => item.id === action.payload
       );
 
-      const newFavorites = state.images
-        .filter((item: IImage) => item.id === action.payload)
-        .concat(storeFavorites);
+      if (isInclude) {
+        state.favorites = state.favorites.filter(
+          (item) => item.id !== action.payload
+        );
+      } else {
+        state.favorites = [
+          ...state.favorites,
+          state.images.find(
+            (item: IImage) => item.id === action.payload
+          ) as IImage,
+        ];
+      }
+    },
 
-      localStorage.setItem('favorites', JSON.stringify(newFavorites));
-
-      state.favorites = newFavorites;
+    setFavorite(state, action: PayloadAction<IImage[]>) {
+      state.favorites = action.payload;
     },
 
     unsetFavorite(state, action: PayloadAction<string>) {
@@ -120,6 +129,7 @@ const imagesSlice = createSlice({
   selectors: {
     getImages: (state: ImagesState) => state.images,
     getSlice: (state: ImagesState) => state,
+    getFavorites: (state: ImagesState) => state.favorites,
   },
 });
 

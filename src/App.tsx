@@ -1,10 +1,12 @@
+import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
-import { store } from '@store';
+import { imagesActions, store } from '@store';
 import { AppRouter, Layout } from '@components';
 import { GlobalStyle, theme } from '@styles';
+import { useAppDispatch } from '@hooks';
 
 import './App.css';
 

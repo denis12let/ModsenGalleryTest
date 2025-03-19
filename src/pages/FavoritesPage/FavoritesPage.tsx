@@ -1,6 +1,7 @@
 import { Container, Gallery } from '@components';
 
-import { IImage } from 'src/types';
+import { imageSelectors } from '@store';
+import { useAppSelector } from '@hooks';
 
 import {
   FavoritesNotFoundText,
@@ -10,9 +11,7 @@ import {
 } from './FavoritesPage.style';
 
 const FavoritesPage = () => {
-  const favorites: IImage[] = JSON.parse(
-    localStorage.getItem('favorites') || '[]'
-  );
+  const favorites = useAppSelector(imageSelectors.getFavorites);
 
   return (
     <FavoritesWrapper>

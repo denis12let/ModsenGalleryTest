@@ -35,7 +35,7 @@ export const FOOTER_LINKS = [
     TITLE: 'Resources',
     LINKS: [
       { TEXT: 'Free eBooks', TO: '/#' },
-      { TEXT: 'Development TuTOrial', TO: '/#' },
+      { TEXT: 'Development Tutorial', TO: '/#' },
       { TEXT: 'How to - Blog', TO: '/#' },
       { TEXT: 'Youtube Playlist', TO: '/#' },
     ],

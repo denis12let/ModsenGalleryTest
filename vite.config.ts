@@ -19,5 +19,4 @@ export default defineConfig({
       '@api': '/src/api',
     },
   },
-  base: '/ModsenGalleryTest',
 });
