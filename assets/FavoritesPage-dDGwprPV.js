@@ -1,8 +1,8 @@
-import{d as e,T as i,j as t}from"./index-D8847-Cn.js";import{C as a,G as n}from"./Gallery-CK6wJIBx.js";const s=e.div`
+import{d as e,T as i,i as a,j as t}from"./index-DO-u16K6.js";import{u as s,C as n,G as r}from"./Gallery-xjd_ReP6.js";const x=e.div`
   width: 100%;
   padding-bottom: 600px;
   padding-top: 60px;
-`,r=e(i)`
+`,p=e(i)`
   font-family: Lexend Deca;
   font-size: 64px;
   font-weight: 700;
@@ -14,7 +14,7 @@ import{d as e,T as i,j as t}from"./index-D8847-Cn.js";import{C as a,G as n}from"
     line-height: 40px;
     max-width: 400px;
   }
-`,x=e(i)`
+`,d=e(i)`
   color: rgb(57, 57, 57);
   font-family: Roboto;
   font-size: 40px;
@@ -25,7 +25,7 @@ import{d as e,T as i,j as t}from"./index-D8847-Cn.js";import{C as a,G as n}from"
     font-size: 32px;
     line-height: 38px;
   }
-`,p=e(i)`
+`,l=e(i)`
   color: rgb(224, 164, 73);
   font-family: Roboto;
   font-size: 32px;
@@ -35,4 +35,4 @@ import{d as e,T as i,j as t}from"./index-D8847-Cn.js";import{C as a,G as n}from"
     font-size: 24px;
     line-height: 28px;
   }
-`,h=()=>{const o=JSON.parse(localStorage.getItem("favorites")||"[]");return t.jsx(s,{children:t.jsx(a,{children:o.length?t.jsxs(t.Fragment,{children:[t.jsx(p,{children:"Saved by you"}),t.jsx(x,{children:"Your favorites list"}),t.jsx(n,{array:o,variant:"image"})]}):t.jsxs(r,{children:["Your ",t.jsx("span",{children:"favorites"})," list is empty"]})})})};export{h as default};
+`,f=()=>{const o=s(a.getFavorites);return t.jsx(x,{children:t.jsx(n,{children:o.length?t.jsxs(t.Fragment,{children:[t.jsx(l,{children:"Saved by you"}),t.jsx(d,{children:"Your favorites list"}),t.jsx(r,{array:o,variant:"image"})]}):t.jsxs(p,{children:["Your ",t.jsx("span",{children:"favorites"})," list is empty"]})})})};export{f as default};
